@@ -14,7 +14,7 @@ $curl = curl_init();
 curl_setopt_array($curl, Array(
         CURLOPT_URL            => BIGBLUEBUTTON_API."$params",
         CURLOPT_TIMEOUT        => 120,
-        CURLOPT_CONNECTTIMEOUT => 30,
+        CURLOPT_CONNECTTIMEOUT => 5,
         CURLOPT_RETURNTRANSFER => TRUE,
         CURLOPT_ENCODING       => 'UTF-8',
         CURLOPT_POST           => sizeof($data_to_post),

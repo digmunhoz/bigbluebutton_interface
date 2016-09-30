@@ -58,71 +58,82 @@ require 'controller/getMeetings.php';
           <div class="table-responsive">
             <table class="table table-striped">
 	<br>
+		<?php if( isset($xml->meetings->meeting->meetingName)) { 		
+		echo "
 	      <thead>
                 <tr>
-                  <th><span class="glyphicon glyphicon-facetime-video" aria-hidden="true"></span> Nome da Sala</th>
-                  <th><span class="glyphicon glyphicon-time" aria-hidden="true"></span> Data Criacao</th>
-                  <th><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> Senha Aluno</th>
-                  <th><span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span> Senha Professor</th>
-                  <th><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Participantes</th>
+                  <th><span class='glyphicon glyphicon-facetime-video' aria-hidden='true'></span> Nome da Sala</th>
+                  <th><span class='glyphicon glyphicon-time' aria-hidden='true'></span> Data Criacao</th>
+                  <th><span class='glyphicon glyphicon-eye-open' aria-hidden='true'></span> Senha Aluno</th>
+                  <th><span class='glyphicon glyphicon-eye-close' aria-hidden='true'></span> Senha Professor</th>
+                  <th><span class='glyphicon glyphicon-user' aria-hidden='true'></span> Participantes</th>
                   <th></th>
                 </tr>
               </thead>
-                <tbody>
-		<?php foreach ($xml->meetings->meeting as $meeting) :?>
-                <tr>
+                <tbody> ";
 
-		<?php 
+			foreach ($xml->meetings->meeting as $meeting) :
+			echo "
+			<tr> " ;
 
-		$name 	 		= $meeting->meetingName;
-		$room_name 	 	= str_replace(' ', '+', $meeting->meetingName);
-		$room_date 	 	= $meeting->createDate;
-		$room_attendeePW 	= $meeting->attendeePW;
-		$room_participantCount  = $meeting->participantCount;
-		$room_moderatorPW	= $meeting->moderatorPW;
+			$name 	 		= $meeting->meetingName;
+			$room_name 	 	= str_replace(' ', '+', $meeting->meetingName);
+			$room_date 	 	= $meeting->createDate;
+			$room_attendeePW 	= $meeting->attendeePW;
+			$room_participantCount  = $meeting->participantCount;
+			$room_moderatorPW	= $meeting->moderatorPW;
 
-		$params_join_checksum  = "joinredirect=true";
-		$params_join_checksum .= "&fullName=Teste+Diogo";
-		$params_join_checksum .= "&meetingID={$room_name}";
-		$params_join_checksum .= "&password={$room_moderatorPW}".SALT;
+			$params_join_checksum  = "joinredirect=true";
+			$params_join_checksum .= "&fullName=Teste+Diogo";
+			$params_join_checksum .= "&meetingID={$room_name}";
+			$params_join_checksum .= "&password={$room_moderatorPW}".SALT;
 
-		$checksum_join = sha1($params_join_checksum);
+			$checksum_join = sha1($params_join_checksum);
 
-		$params_join  = "join?redirect=true"; 
-		$params_join .= "&fullName=Teste+Diogo";
-		$params_join .= "&meetingID={$room_name}";
-		$params_join .= "&password={$room_moderatorPW}";
-		$params_join .= "&checksum={$checksum_join}";
+			$params_join  = "join?redirect=true"; 
+			$params_join .= "&fullName=Teste+Diogo";
+			$params_join .= "&meetingID={$room_name}";
+			$params_join .= "&password={$room_moderatorPW}";
+			$params_join .= "&checksum={$checksum_join}";
 
-		$url_join = BIGBLUEBUTTON_API."/{$params_join}";
+			$url_join = BIGBLUEBUTTON_API."/{$params_join}";
 
-		$params_end_checksum  = "end"; 
-		$params_end_checksum .= "meetingID={$room_name}"; 
-		$params_end_checksum .= "&password={$room_moderatorPW}".SALT; 
+			$params_end_checksum  = "end"; 
+			$params_end_checksum .= "meetingID={$room_name}"; 
+			$params_end_checksum .= "&password={$room_moderatorPW}".SALT; 
 
-		$checksum_end = sha1($params_end_checksum);
-	
-		$params_end  = "end"; 
-		$params_end .= "?meetingID={$room_name}"; 
-		$params_end .= "&password={$room_moderatorPW}"; 
-		$params_end .= "&checksum={$checksum_end}"; 
+			$checksum_end = sha1($params_end_checksum);
+		
+			$params_end  = "end"; 
+			$params_end .= "?meetingID={$room_name}"; 
+			$params_end .= "&password={$room_moderatorPW}"; 
+			$params_end .= "&checksum={$checksum_end}"; 
 
-		$url_end = BIGBLUEBUTTON_API."/{$params_end}";
-		?>
+			$url_end = BIGBLUEBUTTON_API."/{$params_end}";
+			$auth_conference_portal = AUTH_CONFERENCE_PORTAL;
 
-		  <td> <a href="room_detail.php?room=<?= $name ?>&moderatorPW=<?= $room_moderatorPW ?>"><?= $name ?></a></td>
-	  	  <td><?= $room_date ?></td>
-		  <td><?= $room_attendeePW ?></td>
-		  <td><?= $room_moderatorPW ?></td>
-		  <td><span class="badge"><?= $room_participantCount ?></span></td>
-		  <td>
-			<a href="<?php echo AUTH_CONFERENCE_PORTAL."?room={$name}&password={$room_moderatorPW}"; ?>" target="_blank"><button type="button" class="btn btn-success btn-sm" data-toggle="modal">Acessar</button></a>
+			echo "
+			  <td> <a href='room_detail.php?room=$name&moderatorPW=$room_moderatorPW'>$name</a></td>
+			  <td>$room_date</td>
+			  <td>$room_attendeePW</td>
+			  <td>$room_moderatorPW</td>
+			  <td><span class='badge'>$room_participantCount</span></td>
+			  <td>
+				<a href='{$auth_conference_portal}?room=$name&password=$room_moderatorPW' target='_blank'><button type='button' class='btn btn-success btn-sm'>Acessar</button></a>
+				<a href='{$auth_conference_portal}?room=$name' target='_blank'><button type='button' class='btn btn-primary btn-sm'>Link do Aluno</button></a>
+				<button name=$name type='button' class='btn btn-danger btn-sm'>Encerrar</button>
+			  </td>
+			</tr>";
+			endforeach; 
 
-			<a href="<?php echo AUTH_CONFERENCE_PORTAL."?room={$name}"; ?>" target="_blank"><button type="button" class="btn btn-primary btn-sm" >Link do Aluno</button></a>
-			<button name="<?= $name ?>" type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#endConferenceModal">Encerrar</button>
-		  </td>
-                </tr>
-		<?php endforeach; ?>
+		} else {
+		
+			echo "
+			  <div class='alert alert-info'>
+			    <strong>Info!</strong> Nenhuma sala disponível.</strong>
+			  </div>
+			";
+		}?> 
               </tbody>
             </table>
           </div>
