@@ -39,7 +39,7 @@ require 'controller/getMeetings.php';
   <div class="panel-heading"><?= TITLE ?></div>
   <div class="panel-body">
       <form class="form-signin" action="controller/aluno.php" method="post">
-        <h2 class="form-signin-heading"><img src="<?= URL_LOGO ?>" height="90" width="250" alt="EAD Fastsupport"/></h2>
+        <h2 class="form-signin-heading"><img src="<?= URL_LOGO ?>" height="90" width="250" alt="<?= TITLE ?>"/></h2>
         <label for="inputNome" ><span class="glyphicon glyphicon-user"></span> Informe seu Nome:</label>
 	<input type="text" class="form-control" id="inputNome" name="name" required autofocus>
 	<?php if (!isset($_GET['password'])) {

@@ -54,7 +54,7 @@ require 'config/config.php';
   <div class="panel-heading"><?= TITLE ?></div>
   <div class="panel-body">
       <form class="form-signin">
-        <h2 class="form-signin-heading"><img src="<?= URL_LOGO ?>" height="90" width="250" alt="EAD Fastsupport"/></h2><br>
+        <h2 class="form-signin-heading"><img src="<?= URL_LOGO ?>" height="90" width="250" alt="<?= TITLE ?>"></h2><br>
         <label for="inputEmail" class="sr-only">Login</label>
         <input type="email" id="inputEmail" class="form-control" placeholder="Login" required autofocus>
         <br><label for="inputPassword" class="sr-only">Senha</label>
