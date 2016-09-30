@@ -1,12 +1,12 @@
 <?php
 
-if( isset($_POST['name']) && isset($_POST['welcome']) && isset($_POST['maxParticipants']) ) {
+if( isset($_POST['name']) && isset($_POST['welcome']) ) {
 
 	require "../config/config.php";
 
         $name = urlencode($_POST['name']);
         $welcome = urlencode($_POST['welcome']);
-        $maxParticipants = $_POST['maxParticipants'];
+        $maxParticipants = MAX_PARTICIPANTS;
         $moderatorPW = rand(1000,9999);
         $attendeePW = rand(1000,9999);
 

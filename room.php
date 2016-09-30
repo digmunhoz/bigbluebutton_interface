@@ -66,14 +66,6 @@ require 'config/config.php';
 		    <label for="exampleTextarea">Mensagem de Boas vindas da sala</label>
 		    <textarea class="form-control" id="exampleTextarea" name="welcome" rows="3" required="true"></textarea>
 		  </div> 
-		  <div class="form-group">
-		    <label for="exampleSelect1">Quantidade de Participantes</label>
-		    <select class="form-control" name="maxParticipants" id="exampleSelect1">
-			<?php for ($i = 1; $i <= NUMBER_ROOMS; $i++): ?>
-			      <option name="maxParticipants"><?= $i ?></option>
-			<?php endfor; ?>
-		    </select>
-		  </div> 
 		  <!--
 		  <div class="form-group">
 		    	<label for="passwordAttendee">Senha do Aluno</label>

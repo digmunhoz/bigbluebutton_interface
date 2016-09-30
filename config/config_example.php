@@ -6,6 +6,6 @@ define('AUTH_PORTAL',           '');
 define('AUTH_CONFERENCE_PORTAL','');
 define('BIGBLUEBUTTON_API',     '');
 define('SALT',                  '');
-define('NUMBER_ROOMS',          20);
+define('MAX_PARTICIPANTS',          20);
 
 ?>
