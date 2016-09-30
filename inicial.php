@@ -4,8 +4,6 @@ require 'config/config.php';
 require 'controller/getMeetings.php';
 
 ?>
-
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -120,7 +118,7 @@ require 'controller/getMeetings.php';
 		  <td>
 			<a href="<?php echo AUTH_CONFERENCE_PORTAL."?room={$name}&password={$room_moderatorPW}"; ?>" target="_blank"><button type="button" class="btn btn-success btn-sm" data-toggle="modal">Acessar</button></a>
 
-			<button type="button" class="btn btn-primary btn-sm" data-toggle="collapse">Link do Aluno</button>
+			<a href="<?php echo AUTH_CONFERENCE_PORTAL."?room={$name}"; ?>" target="_blank"><button type="button" class="btn btn-primary btn-sm" >Link do Aluno</button></a>
 			<button name="<?= $name ?>" type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#endConferenceModal">Encerrar</button>
 		  </td>
                 </tr>
@@ -131,67 +129,6 @@ require 'controller/getMeetings.php';
         </div>
       </div>
     </div>
-
-          <!-- Modal -->
-          <div class="modal fade" id="attendeeURLModal" role="dialog">
-            <div class="modal-dialog">
-
-              <!-- Modal content-->
-              <div class="modal-content">
-                <div class="modal-header">
-                  <button type="button" class="close" data-dismiss="modal">&times;</button>
-                  <h5> O Link abaixo deve ser utilizado pelo Aluno para entrar na sala de aula:</h5>
-                </div>
-                <div class="modal-body">
-                  <form role="form">
-                    <div class="form-group">
-                      <label><?= AUTH_PORTAL ?>login.php?password=<?= $room_attendeePW ?>&room=<?= $name ?></label>
-                    </div>
-                  </form>
-                </div>
-                <div class="modal-footer">
-                  <button type="submit" class="btn btn-default btn-default pull-left" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Fechar</button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- FIM Modal -->
-
-
-	  <!-- Modal -->
-	  <div class="modal fade" id="endConferenceModal" role="dialog">
-	    <div class="modal-dialog">
-
-	      <!-- Modal content-->
-	      <div class="modal-content">
-		<div class="modal-header">
-		  <button type="button" class="close" data-dismiss="modal">&times;</button>
-		  <h5 style="color:red;"><span class="glyphicon glyphicon-warning-sign"></span> Atenção</h5>
-		  <h5 style="color:red;"> Você está prestes a encerrar a seguinte sala de aula:</h5>
-		</div>
-		<div class="modal-body">
-		  <form role="form">
-		    <div class="form-group">
-		      <label for="usrname"><span class="glyphicon glyphicon-education"></span> Nome da Sala:</label>
-		      <input type="text" class="form-control" id="usrname" value="<?= $name ?>" disabled>
-		    </div>
-		    <div class="form-group">
-		      <label for="psw"><span class="glyphicon glyphicon-user"></span> Pessoas na Sala:</label>
-		      <input type="text" class="form-control" id="psw" value="<?= $room_participantCount ?>" disabled>
-		    </div>
-		    <button type="submit" class="btn btn-default btn-danger btn-block"><span class="glyphicon glyphicon-off"></span> Encerrar</button>
-		  </form>
-		</div>
-		<div class="modal-footer">
-		  <button type="submit" class="btn btn-default btn-default pull-left" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancelar</button>
-		</div>
-	      </div>
-	    </div>
-	  </div>
-	</div>
-	<!-- FIM Modal -->
-
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
