@@ -1,5 +1,14 @@
 <?php
 
+$config = 'config/config.php';
+
+if (!file_exists($config)) {
+    exit("Configuration file does not exist. 
+		<br>
+		<br> 
+	 Please create config/config.php");
+}
+
 require 'config/config.php';
 
 ?>
