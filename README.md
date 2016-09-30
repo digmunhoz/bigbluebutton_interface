@@ -2,22 +2,8 @@
 Interface para criação e administração de salas de conferência no BigBlueButton
 
 Simple and easy to install.
-Just deploy code in your server and configure config/config.php (as below) with your BigBlueButton informations.
 
-########## config/config.php file #################
-
-<?php
-define('TITLE',                 '');
-define('URL_LOGO',              '');
-define('AUTH_PORTAL',           '');
-define('AUTH_CONFERENCE_PORTAL','');
-define('BIGBLUEBUTTON_SERVER',  '');
-define('BIGBLUEBUTTON_API',     '');
-define('SALT',                  '');
-define('NUMBER_ROOMS',          20);
-?>
-
-##################################################
-
-# Dependences
-php php-curl php-xml
+1 - Deploy code in your server
+2 - Rename config/config_example.php to config/config.php
+3 - Configure config/config.php with your BigBlueButton informations.
+4 - Install Dependences: php php-curl php-xml
