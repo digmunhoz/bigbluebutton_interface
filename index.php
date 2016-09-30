@@ -2,6 +2,7 @@
 
 $config = 'config/config.php';
 
+
 if (!file_exists($config)) {
     exit("Configuration file does not exist. 
 		<br>
