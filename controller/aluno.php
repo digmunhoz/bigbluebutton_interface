@@ -22,7 +22,8 @@ if( isset($_POST['name']) && isset($_POST['password']) && isset($_POST['room']) 
 
 else { 
 
-        echo '<script>alert("Erro ao entrar na sala de aula!");</script>';
+        //echo '<script>alert("Erro ao entrar na sala de aula!");</script>';
+        echo "<script>alert('Sala: $room Pass: $password');</script>";
         echo '<script>window.history.back();</script>';
 
 }
