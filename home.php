@@ -31,34 +31,20 @@ require 'config/config.php';
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
   </head>
-
+  
   <body>
-
     <?php include 'controller/header.php'; ?>
-
     <div class="container-fluid">
       <div class="row">
-	<div class='col-sm-3 col-md-2 sidebar'>
-	  <ul class='nav nav-sidebar'> 
-	    <?php include 'controller/menu.php'; ?>
-	  </ul> 
-	  <ul class='nav nav-sidebar'> 
-	  </ul> 
-	  <ul class='nav nav-sidebar'> 
-	  </ul> 
-	</div>
+        <div class='col-sm-3 col-md-2 sidebar'>
+    	   <ul class='nav nav-sidebar'> 
+    	    <?php include 'controller/menu.php'; ?></ul> 
+    	   <ul class='nav nav-sidebar'></ul> 
+    	   <ul class='nav nav-sidebar'></ul> 
+        </div>
         <div class='col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main'>
           <h2 class='sub-header'>Página Inicial</h2>
-           <div class='table-responsive'>
-	     <div class="panel panel-default panel-primary panel-success">
-	     <div class="panel-body">
-		Seja bem vindo ao nosso sistema de administração de salas de conferência.
-		<br><br>
-		Aqui você poderá criar e gerenciar as salas para conferências e aulas online <br>
-		bem como consultar o estado atual das conferências em andamento, <br>
-		verificar quantidade de alunos nas salas, definir senhas e muito mais!
-	     </div>
-  	   </div>
+          <div class='table-responsive'>
           </div>
         </div>
       </div>
@@ -74,4 +60,5 @@ require 'config/config.php';
     <script src="js/dropdown.js"></script>
     <script src="js/bootstrap.js"></script>
   </body>
+
 </html>

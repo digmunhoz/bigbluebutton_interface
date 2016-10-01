@@ -34,44 +34,50 @@ require 'controller/getMeetings.php';
     <![endif]-->
   </head>
   <body>
-<div class="container">
-<div class="panel panel-primary">
-  <div class="panel-heading"><?= TITLE ?></div>
-  <div class="panel-body">
-      <form class="form-signin" action="controller/aluno.php" method="post">
-        <h2 class="form-signin-heading"><img src="<?= URL_LOGO ?>" height="90" width="250" alt="<?= TITLE ?>"/></h2>
-        <label for="inputNome" ><span class="glyphicon glyphicon-user"></span> Informe seu Nome:</label>
-	<input type="text" class="form-control" id="inputNome" name="name" required autofocus>
-	<?php if (!isset($_GET['password'])) {
-		echo "
-		<br><label for='inputPassword'><span class='glyphicon glyphicon-eye-open'></span> Informe a Senha:</label>
-		<input type='password' id='inputPassword' class='form-control' name='password' required >" ; 
-	} 
-	else {
-		echo "
-		<br>
-		<input type='hidden' id='inputPassword' class='form-control' name='password' value='{$_GET[password]}'> "; 
-	} ?>
-        <?php if (!isset($_GET['room'])) {
-                echo "  
-	        <label for='inputRoom'>Escolha a Sala:</label>
-	        <div class='dropdown'>
-	        <select name='room' class='form-control' required>";
-	            foreach ($xml->meetings->meeting as $meeting):
-        	        echo "<option value='{$meeting->meetingName}'>{$meeting->meetingName}</option>";
-                    endforeach;
-                echo "</select>" ;
-        }
-        else {
-                echo "  
-                <br>
-		<input type='hidden' value='{$_GET[room]}' name='room'>";
-        } ?>
-        <br><button class="btn btn-lg btn-primary btn-block" type="submit">Entrar</button>
-      </form>
-  </div>
-</div>
-    </div> <!-- /container -->
+  <div class="container">
+    <div class="panel panel-primary">
+      <div class="panel-heading"><?= TITLE ?></div>
+      <div class="panel-body">
+       <form class="form-signin" action="controller/aluno.php" method="post">
+          <h2 class="form-signin-heading"><img src="<?= URL_LOGO ?>" height="90" width="250" alt="<?= TITLE ?>"/></h2>
+          <label for="inputNome" ><span class="glyphicon glyphicon-user"></span> Informe seu Nome:</label>
+          <input type="text" class="form-control" id="inputNome" name="name" required autofocus>
+          <?php if (!isset($_GET['password'])) {
+            echo "
+              <br>
+              <label for='inputPassword'><span class='glyphicon glyphicon-eye-open'></span> Informe a Senha:</label>
+              <input type='password' id='inputPassword' class='form-control' name='password' required >
+            "; 
+          } else {
+            echo "
+              <br>
+              <input type='hidden' id='inputPassword' class='form-control' name='password' value='{$_GET[password]}'> 
+            ";
+          } ?>
+          <?php if (!isset($_GET['room'])) {
+            echo "  
+              <label for='inputRoom'>Escolha a Sala:</label>
+              <div class='dropdown'>
+              <select name='room' class='form-control' required>";
+              foreach ($xml->meetings->meeting as $meeting):
+              echo "
+                <option value='{$meeting->meetingName}'>{$meeting->meetingName}</option>
+              ";
+              endforeach;
+              echo "
+                </select>
+              " ;
+          } else {
+            echo "  
+              <br>
+              <input type='hidden' value='{$_GET[room]}' name='room'>
+            ";
+          } ?>
+          <br><button class="btn btn-lg btn-primary btn-block" type="submit">Entrar</button>
+        </form>
+      </div>
+    </div>
+  </div> <!-- /container -->
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="js/ie10-viewport-bug-workaround.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>

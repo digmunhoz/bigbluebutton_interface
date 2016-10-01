@@ -3,7 +3,6 @@
 require 'config/config.php';
 
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -34,41 +33,35 @@ require 'config/config.php';
   </head>
 
   <body>
-
     <?php include 'controller/header.php'; ?>
-
     <div class="container-fluid">
       <div class="row">
         <div class='col-sm-3 col-md-2 sidebar'>
-          <ul class='nav nav-sidebar'> 
-            <?php include 'controller/menu.php'; ?>
-          </ul> 
-          <ul class='nav nav-sidebar'> 
-          </ul> 
-          <ul class='nav nav-sidebar'> 
-          </ul> 
+          <ul class='nav nav-sidebar'><?php include 'controller/menu.php'; ?></ul> 
+          <ul class='nav nav-sidebar'></ul> 
+          <ul class='nav nav-sidebar'></ul> 
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
           <h2 class="sub-header">Criação de Conferencias</h2>
           <div class="table-responsive">
-	  <br>
-		<form action="controller/create_room.php" method="post">
-		  <div class="form-group">
-		    <label for="exampleTextarea">Nome da Sala de Aula</label>
-		    <textarea class="form-control" id="exampleTextarea" name="name" rows="1" required="true"></textarea>
-		  </div>  
-		  <div class="form-group">
-		    <label for="exampleTextarea">Mensagem de Boas vindas da sala</label>
-		    <textarea class="form-control" id="exampleTextarea" name="welcome" rows="3" required="true"></textarea>
-		  </div> 
-		  <!--
-		  <div class="form-group">
-		    	<label for="passwordAttendee">Senha do Aluno</label>
-			<input type="password" id="passwordAttendee" class="form-control" name="passwordAttendee" required>
-		  </div>
-		  --> 
-		  <button type="submit" class="btn btn-primary">Criar</button>
-		</form>
+          <br>
+          <form action="controller/create_room.php" method="post">
+            <div class="form-group">
+              <label for="exampleTextarea">Nome da Sala de Aula</label>
+              <textarea class="form-control" id="exampleTextarea" name="name" rows="1" required="true"></textarea>
+            </div>  
+            <div class="form-group">
+              <label for="exampleTextarea">Mensagem de Boas vindas da sala</label>
+              <textarea class="form-control" id="exampleTextarea" name="welcome" rows="3" required="true"></textarea>
+            </div> 
+            <!--
+            <div class="form-group">
+            <label for="passwordAttendee">Senha do Aluno</label>
+            <input type="password" id="passwordAttendee" class="form-control" name="passwordAttendee" required>
+            </div>
+            --> 
+            <button type="submit" class="btn btn-primary">Criar</button>
+          </form>
           </div>
         </div>
       </div>
