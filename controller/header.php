@@ -11,14 +11,14 @@ echo '
           </button>
           <a class="navbar-brand" href="#">'.TITLE.'</a>
         </div>
-        <div id="navbar" class="navbar-collapse collapse">
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href="#">Dashboard</a></li>
-            <li><a href="#">Settings</a></li>
-            <li><a href="#">Profile</a></li>
-            <li><a href="#">Help</a></li>
-          </ul>
-        </div>
+
+
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="#"><span class="glyphicon glyphicon-user"></span> Perfil</a></li>
+      <li><a href="#"><span class="glyphicon glyphicon-off"></span> Sair</a></li>
+    </ul>
+
+
       </div>
     </nav>
 ';

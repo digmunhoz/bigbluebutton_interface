@@ -39,15 +39,14 @@ require 'config/config.php';
 
     <div class="container-fluid">
       <div class="row">
-        <div class="col-sm-3 col-md-2 sidebar">
-          <ul class="nav nav-sidebar">
-            <li><a href="inicial.php">Listar Salas</a></li>
-            <li class="active"><a href="room.php">Criar Sala de Aula<span class="sr-only">(current)</span></a></li>
-          </ul>
-          <ul class="nav nav-sidebar">
-          </ul>
-          <ul class="nav nav-sidebar">
-          </ul>
+        <div class='col-sm-3 col-md-2 sidebar'>
+          <ul class='nav nav-sidebar'> 
+            <?php include 'controller/menu.php'; ?>
+          </ul> 
+          <ul class='nav nav-sidebar'> 
+          </ul> 
+          <ul class='nav nav-sidebar'> 
+          </ul> 
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
           <h2 class="sub-header">Criação de Conferencias</h2>
