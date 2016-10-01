@@ -15,7 +15,7 @@ echo '
 
     <ul class="nav navbar-nav navbar-right">
       <li><a href="#"><span class="glyphicon glyphicon-user"></span> '.$username.'</a></li>
-      <li><a href="../logout.php"><span class="glyphicon glyphicon-off"></span> Sair</a></li>
+      <li><a href="./logout.php"><span class="glyphicon glyphicon-off"></span> Sair</a></li>
     </ul>
 
 
