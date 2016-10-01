@@ -1,6 +1,7 @@
 <?php
 
 require 'config/config.php';
+require 'controller/session_validate.php';
 
 ?>
 <!DOCTYPE html>

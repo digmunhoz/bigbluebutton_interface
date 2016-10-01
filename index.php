@@ -2,12 +2,12 @@
 
 $config = 'config/config.php';
 
-if (!file_exists($config)) {
-    exit("Configuration file does not exist. 
-		<br>
-		<br> 
-	 Please create config/config.php");
-}
+  if (!file_exists($config)) {
+      exit("Configuration file does not exist. 
+  		<br>
+  		<br> 
+  	 Please create config/config.php");
+  }
 
 require 'config/config.php';
 
@@ -51,13 +51,13 @@ require 'config/config.php';
       <div class="panel panel-primary">
         <div class="panel-heading"><?= TITLE ?></div>
         <div class="panel-body">
-          <form class="form-signin">
-            <h2 class="form-signin-heading"><img src="<?= URL_LOGO ?>" height="90" width="250" alt="<?= TITLE ?>"></h2><br>
-            <label for="inputEmail" class="sr-only">Login</label>
-            <input type="email" id="inputEmail" class="form-control" placeholder="Login" required autofocus>
+          <form class="form-signin" action="controller/session_create.php" method="post">
+            <h2 class="form-signin-heading"><img src="<?= URL_LOGO ?>" height="90" width="250" alt="Logo"></h2><br>
+            <label for="inputUsername" class="sr-only">Login</label>
+            <input type="text" id="inputUsername" class="form-control" name="username" placeholder="Login" required autofocus>
             <br>
             <label for="inputPassword" class="sr-only">Senha</label>
-            <input type="password" id="inputPassword" class="form-control" placeholder="Senha" required>
+            <input type="password" id="inputPassword" class="form-control" name="password" placeholder="Senha" required>
             <div class="checkbox">
               <label><input type="checkbox" value="remember-me"> Lembrar</label>
             </div>

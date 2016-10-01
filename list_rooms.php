@@ -2,6 +2,7 @@
 
 require 'config/config.php';
 require 'controller/getMeetings.php';
+require 'controller/session_validate.php';
 
 ?>
 <!DOCTYPE html>
