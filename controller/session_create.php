@@ -1,6 +1,6 @@
 <?php
 
-if (($_POST['username'] == 'diogo.munhoz') && ($_POST['password'] == '123')) {
+if (($_POST['username'] == 'fastsupport') && ($_POST['password'] == 'fastsupport')) {
     $username = $_POST['username'];
     $password = $_POST['password'];
     session_start();

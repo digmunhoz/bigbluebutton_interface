@@ -14,10 +14,10 @@ require 'controller/session_validate.php';
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="favicon.ico">
-
     <title><?= TITLE ?></title>
-
     <!-- Bootstrap core CSS -->
+    
+    <link href="css/navbar-fixed-top.css" rel="stylesheet">
     <link href="dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
@@ -32,41 +32,24 @@ require 'controller/session_validate.php';
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
   </head>
-
+  
   <body>
     <?php include 'controller/header.php'; ?>
     <div class="container-fluid">
       <div class="row">
         <div class='col-sm-3 col-md-2 sidebar'>
-          <ul class='nav nav-sidebar'><?php include 'controller/menu.php'; ?></ul> 
-          <ul class='nav nav-sidebar'></ul> 
-          <ul class='nav nav-sidebar'></ul> 
+         <ul class='nav nav-sidebar'> 
+         <?php include 'controller/menu.php'; ?></ul> 
+         <ul class='nav nav-sidebar'></ul> 
+         <ul class='nav nav-sidebar'></ul> 
         </div>
-        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-          <h2 class="sub-header">Criação de Conferencias</h2>
-          <div class="table-responsive">
-          <br>
-          <form action="controller/create_room.php" method="post">
-            <div class="form-group">
-              <label for="exampleTextarea">Nome da Sala de Aula</label>
-              <textarea class="form-control" id="exampleTextarea" name="name" rows="1" required="true"></textarea>
-            </div>  
-            <div class="form-group">
-              <label for="exampleTextarea">Mensagem de Boas vindas da sala</label>
-              <textarea class="form-control" id="exampleTextarea" name="welcome" rows="3" required="true"></textarea>
-            </div> 
-            <!--
-            <div class="form-group">
-            <label for="passwordAttendee">Senha do Aluno</label>
-            <input type="password" id="passwordAttendee" class="form-control" name="passwordAttendee" required>
-            </div>
-            --> 
-            <button type="submit" class="btn btn-primary">Criar</button>
-          </form>
-          </div>
+        <div class='col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main'>
+          <h2 class='sub-header'>Template</h2>
+          <div class='table-responsive'></div>
         </div>
       </div>
     </div>
-    <?php include 'controller/js.php'; ?>
+    <?php include 'controller/js.php';?>
   </body>
+
 </html>

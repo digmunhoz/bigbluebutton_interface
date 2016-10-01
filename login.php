@@ -77,11 +77,6 @@ require 'controller/getMeetings.php';
           </form>
         </div>
       </div>
-    </div> <!-- /container -->
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="js/ie10-viewport-bug-workaround.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="js/ie-emulation-modes-warning.js"></script>
-    <script src="js/dropdown.js"></script>
+    <?php include 'controller/js.php'; ?>
   </body>
 </html>
