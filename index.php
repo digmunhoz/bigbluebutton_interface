@@ -52,15 +52,13 @@ require 'config/config.php';
         <div class="panel-heading"><?= TITLE ?></div>
         <div class="panel-body">
           <form class="form-signin" action="controller/session_create.php" method="post">
-            <h2 class="form-signin-heading"><img src="<?= URL_LOGO ?>" height="90" width="250" alt="Logo"></h2><br>
+            <h2 class="form-signin-heading"><img src="<?= URL_LOGO ?>" height="90" width="250" alt="Logo"></h2>
             <label for="inputUsername" class="sr-only">Login</label>
             <input type="text" id="inputUsername" class="form-control" name="username" placeholder="Login" required autofocus>
             <br>
             <label for="inputPassword" class="sr-only">Senha</label>
             <input type="password" id="inputPassword" class="form-control" name="password" placeholder="Senha" required>
-            <div class="checkbox">
-              <label><input type="checkbox" value="remember-me"> Lembrar</label>
-            </div>
+
             <button class="btn btn-lg btn-primary btn-block" type="submit">Entrar</button>
           </form>
         </div>
