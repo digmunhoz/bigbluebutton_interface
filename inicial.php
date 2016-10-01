@@ -26,10 +26,6 @@ require 'controller/getMeetings.php';
     <!-- Custom styles for this template -->
     <link href="css/dashboard.css" rel="stylesheet">
 
-    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
-    <!--[if lt IE 9]><script src="asseie8-responsive-file-warning.js"></script><![endif]-->
-    <script src="asseie-emulation-modes-warning.js"></script>
-
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
@@ -53,13 +49,13 @@ require 'controller/getMeetings.php';
           <ul class="nav nav-sidebar">
           </ul>
         </div>
-        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-          <h2 class="sub-header">Lista de Salas</h2>
-          <div class="table-responsive">
-            <table class="table table-striped">
-	<br>
-		<?php if( isset($xml->meetings->meeting->meetingName)) { 		
-		echo "
+        <div class='col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main'>
+	<?php if( isset($xml->meetings->meeting->meetingName)) { 		
+	echo "
+          <h2 class='sub-header'>Lista de Salas</h2>
+          <div class='table-responsive'>
+            <table class='table table-striped'>
+	  <br>
 	      <thead>
                 <tr>
                   <th><span class='glyphicon glyphicon-facetime-video' aria-hidden='true'></span> Nome da Sala</th>
@@ -145,11 +141,9 @@ require 'controller/getMeetings.php';
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="assevendor/jquery.min.js"><\/script>')</script>
-    <script src="dibootstrap.min.js"></script>
     <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
-    <script src="assevendor/holder.min.js"></script>
+    <script src="js/holder.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="asseie10-viewport-bug-workaround.js"></script>
     <script src="js/dropdown.js"></script>
     <script src="js/bootstrap.js"></script>
   </body>
