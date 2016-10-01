@@ -44,7 +44,7 @@ if( isset($_POST['name']) && isset($_POST['welcome']) ) {
         file_get_contents($url);
 
         echo '<script>alert("Sala de aula criada com sucesso!");</script>';
-        echo '<script>window.location="../inicial.php";</script>';
+        echo '<script>window.location="../list_rooms.php";</script>';
 	}
 else {
 
