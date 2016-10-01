@@ -34,65 +34,55 @@ require 'config/config.php';
   </head>
 
   <body>
-
     <?php include 'controller/header.php'; ?>
-
     <div class="container-fluid">
       <div class="row">
         <div class='col-sm-3 col-md-2 sidebar'>
           <ul class='nav nav-sidebar'> 
-            <?php include 'controller/menu.php'; ?>
-          </ul> 
-          <ul class='nav nav-sidebar'> 
-          </ul> 
-          <ul class='nav nav-sidebar'> 
-          </ul> 
+          <?php include 'controller/menu.php'; ?></ul> 
+          <ul class='nav nav-sidebar'></ul> 
+          <ul class='nav nav-sidebar'></ul> 
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
           <h2 class="sub-header"> <?php echo $_GET['room'];?></h2>
           <div class="table-responsive">
             <table class="table table-striped">
-	<br>
-	      <thead>
-                <tr>
-                  <th><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Participante</th>
-                  <th><span class="glyphicon glyphicon-lock" aria-hidden="true"></span> Perfil</th>
-                  <th><span class="glyphicon glyphicon-blackboard" aria-hidden="true"></span> Apresentador</th>
-                  <th><span class="glyphicon glyphicon-volume-up" aria-hidden="true"></span> Apenas Ouvindo</th>
-                  <th><span class="glyphicon glyphicon-bullhorn" aria-hidden="true"></span> Microfone</th>
-                </tr>
-              </thead>
-                <tbody>
-		<?php 
-			include 'controller/getMeetingInfo.php';
-			foreach ($xml->attendees->attendee as $meeting) :
-		?>
-                <tr>
-
-		<?php 
-
-		$name 		= $meeting->fullName;
-		$role 		= $meeting->role;
-		$isPresenter 	= $meeting->isPresenter;
-		$isListeningOnly 	= $meeting->isListeningOnly;
-		$hasJoinedVoice 	= $meeting->hasJoinedVoice;
-
-		?>
-
-		  <td><?= $name ?></td>
-	  	  <td><?= $role ?></td>
-	  	  <td><?= $isPresenter ?></td>
-	  	  <td><?= $isListeningOnly ?></td>
-	  	  <td><?= $hasJoinedVoice ?></td>
-                </tr>
-		<?php endforeach; ?>
-              </tbody>
+            <br>
+            <thead>
+              <tr>
+                <th><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Participante</th>
+                <th><span class="glyphicon glyphicon-lock" aria-hidden="true"></span> Perfil</th>
+                <th><span class="glyphicon glyphicon-blackboard" aria-hidden="true"></span> Apresentador</th>
+                <th><span class="glyphicon glyphicon-volume-up" aria-hidden="true"></span> Apenas Ouvindo</th>
+                <th><span class="glyphicon glyphicon-bullhorn" aria-hidden="true"></span> Microfone</th>
+              </tr>
+            </thead>
+            <tbody>
+              <?php 
+                include 'controller/getMeetingInfo.php';
+                foreach ($xml->attendees->attendee as $meeting) :
+              ?>
+              <tr>
+                <?php 
+                $name 		= $meeting->fullName;
+                $role 		= $meeting->role;
+                $isPresenter 	= $meeting->isPresenter;
+                $isListeningOnly 	= $meeting->isListeningOnly;
+                $hasJoinedVoice 	= $meeting->hasJoinedVoice;
+                ?>
+                <td><?= $name ?></td>
+                <td><?= $role ?></td>
+                <td><?= $isPresenter ?></td>
+                <td><?= $isListeningOnly ?></td>
+                <td><?= $hasJoinedVoice ?></td>
+              </tr>
+              <?php endforeach; ?>
+            </tbody>
             </table>
           </div>
         </div>
       </div>
     </div>
-
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
