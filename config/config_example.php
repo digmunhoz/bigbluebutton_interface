@@ -8,5 +8,6 @@ define('BIGBLUEBUTTON_API',     '');
 define('SALT',                  '');
 define('MAX_PARTICIPANTS',       20);
 define('SESSION_TIMEOUT',        30);
+define('DB',        			'db/bbb_interface.db');
 
 ?>

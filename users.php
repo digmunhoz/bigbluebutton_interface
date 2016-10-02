@@ -2,6 +2,7 @@
 
 require 'config/config.php';
 require 'controller/session_validate.php';
+require 'controller/get_users.php';
 
 ?>
 <!DOCTYPE html>
@@ -50,8 +51,8 @@ require 'controller/session_validate.php';
           <br>
           <thead>
             <tr>
-              <th><span class='glyphicon glyphicon-user' aria-hidden='true'></span> Nome</th>
               <th><span class='glyphicon glyphicon-asterisk' aria-hidden='true'></span> Login</th>
+              <th><span class='glyphicon glyphicon-user' aria-hidden='true'></span> Nome</th>
               <th><span class='glyphicon glyphicon-envelope' aria-hidden='true'></span> E-mail</th>
               <th><span class='glyphicon glyphicon-time' aria-hidden='true'></span> Data Criacao</th>
               <th></th>
@@ -59,16 +60,21 @@ require 'controller/session_validate.php';
           </thead>
         <tbody> 
           <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
+          <?php
+          while ($row = $results->fetchArray())
+          {
+          echo "  
+          <td>{$row['login']}</td>
+          <td>{$row['name']}</td>
+          <td>{$row['email']}</td>
+          <td>{$row['creation_date']}</td>
           <td>
           <a href='#'><button type='button' class='btn btn-success btn-sm'>Editar</button></a>
           <a href='#'><button type='button' class='btn btn-primary btn-sm'>Bloquear</button></a>
           <a href='#'><button type='button' class='btn btn-danger btn-sm'>Apagar</button>
           </td>
           </tr>
+          ";} ?>
         </tbody>
         </table>
         </div>
@@ -77,5 +83,4 @@ require 'controller/session_validate.php';
     </div>
     <?php include 'controller/js.php';?>
   </body>
-
 </html>
