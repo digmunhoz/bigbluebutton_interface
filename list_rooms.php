@@ -72,27 +72,28 @@ require 'controller/session_validate.php';
 					<tr>
 				";
 
-				$name 	 		= $meeting->meetingName;
-				$room_name 	 	= str_replace(' ', '+', $meeting->meetingName);
-				$room_date 	 	= $meeting->createDate;
-				$room_attendeePW 	= $meeting->attendeePW;
+				$name 	 				= $meeting->meetingName;
+				$room_name 	 			= str_replace(' ', '+', $meeting->meetingName);
+				$room_date 	 			= $meeting->createDate;
+				$room_attendeePW 		= $meeting->attendeePW;
 				$room_participantCount  = $meeting->participantCount;
-				$room_moderatorPW	= $meeting->moderatorPW;
+				$room_moderatorPW		= $meeting->moderatorPW;
+				$fullname 				= str_replace(' ', '+', $_SESSION['fullname']);
 
 				$params_join_checksum  = "joinredirect=true";
-				$params_join_checksum .= "&fullName=Teste+Diogo";
+				$params_join_checksum .= "&fullName=".$fullname;
 				$params_join_checksum .= "&meetingID={$room_name}";
 				$params_join_checksum .= "&password={$room_moderatorPW}".SALT;
 
 				$checksum_join = sha1($params_join_checksum);
 
 				$params_join  = "join?redirect=true"; 
-				$params_join .= "&fullName=Teste+Diogo";
+				$params_join .= "&fullName=".$fullname;
 				$params_join .= "&meetingID={$room_name}";
 				$params_join .= "&password={$room_moderatorPW}";
 				$params_join .= "&checksum={$checksum_join}";
 
-				$url_join = BIGBLUEBUTTON_API."/{$params_join}";
+				$url_join = BIGBLUEBUTTON_API."{$params_join}";
 
 				$params_end_checksum  = "end"; 
 				$params_end_checksum .= "meetingID={$room_name}"; 
@@ -105,7 +106,7 @@ require 'controller/session_validate.php';
 				$params_end .= "&password={$room_moderatorPW}"; 
 				$params_end .= "&checksum={$checksum_end}"; 
 
-				$url_end = BIGBLUEBUTTON_API."/{$params_end}";
+				$url_end = BIGBLUEBUTTON_API."{$params_end}";
 				$auth_conference_portal = AUTH_CONFERENCE_PORTAL;
 
 				echo "
@@ -117,7 +118,7 @@ require 'controller/session_validate.php';
 					<td>
 					<a href='$url_join' target='_blank'><button type='button' class='btn btn-success btn-sm'>Acessar</button></a>
 					<a href='{$auth_conference_portal}?room=$name' target='_blank'><button type='button' class='btn btn-primary btn-sm'>Link do Aluno</button></a>
-					<button name=$name type='button' class='btn btn-danger btn-sm'>Encerrar</button>
+					<a href='controller/end_room.php?room=$name&moderatorPW=$room_moderatorPW'><button type='button' class='btn btn-danger btn-sm' onclick='return confirm_delete()'>Encerrar</button></a>
 					</td>
 					</tr>
 				";
@@ -131,6 +132,12 @@ require 'controller/session_validate.php';
 					</div>
 				";
 				}?> 
+<script type="text/javascript">
+    function confirm_delete() {
+        return confirm("Tem certeza que deseja remover a sala?");
+    }
+</script>
+
 				</tbody>
 				</table>
 				</div>

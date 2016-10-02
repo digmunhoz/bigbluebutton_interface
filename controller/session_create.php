@@ -6,16 +6,18 @@
     $password   = $_POST['password'];
     $password   = sha1($password);
 
-    $results = $db->query("SELECT * FROM users where login = '{$login}' and password = '{$password}'");
+    $results    = $db->query("SELECT * FROM users where login = '{$login}' and password = '{$password}'");
 
-    $results = $results->fetchArray();
-    $login = $results['login'];
-    $name = $results['name'];
+    $results    = $results->fetchArray();
+    $login      = $results['login'];
+    $fullname   = $results['name'];
+    $profile    = $results['profile'];
 
     if(!empty($login)) {
         session_start();
-        $_SESSION['username'] = $login;
-        $_SESSION['name'] = $name;
+        $_SESSION['username']   = $login;
+        $_SESSION['fullname']   = urldecode($fullname);
+        $_SESSION['profile']    = $profile;
         header("Location:../home.php");
         exit();
       } else {

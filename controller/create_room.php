@@ -39,17 +39,27 @@ if( isset($_POST['name']) && isset($_POST['welcome']) ) {
 	$params .= "&welcome={$welcome}";
 	$params .= "&checksum={$checksum}";
 
-        $url = $params;
+        $url    = $params;
 
-        file_get_contents($url);
+        $ch     = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        $output = curl_exec($ch);
+        curl_close($ch);
 
-        echo '<script>alert("Sala de aula criada com sucesso!");</script>';
-        echo '<script>window.location="../list_rooms.php";</script>';
+        $xml    = simplexml_load_string($output);
+
+        $returncode   = $xml->returncode;
+        $message      = $xml->message;
+
+        if ($returncode == 'FAILED') {
+                echo "<script>alert('Erro: $message');</script>";
+                echo '<script>window.history.back();</script>';
+        }
+        else {
+                echo '<script>alert("Sala de aula criada com sucesso!");</script>';
+                //echo "<script>alert('echo r: $message');</script>";
+                echo '<script>window.location="../list_rooms.php";</script>';
 	}
-else {
-
-        echo '<script>alert("Erro ao criar sala de aula!");</script>';
-        echo '<script>window.history.back();</script>';
-
 }
 ?>
