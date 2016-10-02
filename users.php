@@ -46,7 +46,8 @@ require 'controller/get_users.php';
         </div>
       <div class='col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main'>
           <h2 class='sub-header'>Usuários</h2>
-          <div class='table-responsive'>
+          <div class='table-responsive' >
+            <span class='glyphicon glyphicon-plus pull-right btn btn-sm' data-toggle="modal" data-target="#myModal" aria-hidden='true' ></span>
           <table class='table table-striped'>
           <br>
           <thead>
@@ -55,6 +56,7 @@ require 'controller/get_users.php';
               <th><span class='glyphicon glyphicon-user' aria-hidden='true'></span> Nome</th>
               <th><span class='glyphicon glyphicon-envelope' aria-hidden='true'></span> E-mail</th>
               <th><span class='glyphicon glyphicon-time' aria-hidden='true'></span> Data Criacao</th>
+              <th><span class='glyphicon glyphicon-cog' aria-hidden='true'></span> Perfil</th>
               <th></th>
             </tr>
           </thead>
@@ -68,10 +70,10 @@ require 'controller/get_users.php';
           <td>{$row['name']}</td>
           <td>{$row['email']}</td>
           <td>{$row['creation_date']}</td>
+          <td>{$row['profile']}</td>
           <td>
           <a href='#'><button type='button' class='btn btn-success btn-sm'>Editar</button></a>
-          <a href='#'><button type='button' class='btn btn-primary btn-sm'>Bloquear</button></a>
-          <a href='#'><button type='button' class='btn btn-danger btn-sm'>Apagar</button>
+          <a href='#'><button type='button' class='btn btn-danger btn-sm' class='btn btn-info btn-lg' data-toggle='modal' data-target='#myModal'>Apagar</button>
           </td>
           </tr>
           ";} ?>
@@ -81,6 +83,34 @@ require 'controller/get_users.php';
       </div>
       </div>
     </div>
+    <div id="myModal" class="modal fade" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">Novo usuário</h4>
+          </div>
+          <div class="modal-body">
+            <div class="form-group">
+              <input type="text" class="form-control" aria-describedby="emailHelp" placeholder="Nome">
+            </div>
+            <div class="form-group">
+              <input type="email" class="form-control" aria-describedby="emailHelp" placeholder="E-mail">
+            </div>
+            <div class="form-group">
+              <input type="password" class="form-control" aria-describedby="emailHelp" placeholder="Senha">
+            </div>                        
+            <div class="form-group">
+              <input type="password" class="form-control" aria-describedby="emailHelp" placeholder="Repita a Senha">
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+            <button type="button" class="btn btn-primary">Salvar</button>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
     <?php include 'controller/js.php';?>
   </body>
 </html>
