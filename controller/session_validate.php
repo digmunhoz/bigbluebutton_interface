@@ -7,7 +7,7 @@ session_start();
 	} 
 	else {
 	    $username = $_SESSION['username'];
-		$expireAfter = 1;
+		$expireAfter = SESSION_TIMEOUT;
 		 
 		if(isset($_SESSION['last_action'])){
 		    
@@ -15,7 +15,7 @@ session_start();
 		    
 		    $expireAfterSeconds = $expireAfter * 60;
 		    
-		    if($secondsInactive >= 5){
+		    if($secondsInactive >= $expireAfterSeconds){
 		        session_unset();
 		        session_destroy();
 		        echo '<script>alert("Sessão expirada. Faça login novamente!");</script>';

@@ -9,15 +9,20 @@ echo '
         <ul class="nav navbar-nav navbar-right">
           <li><a href="#"><span class="glyphicon glyphicon-user"></span> '.$username.'</a></li>
           <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-cog"></span> Configurações <span class="caret"></span></a>
+
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" ><span class="glyphicon glyphicon-cog"></span> Configurações <span class="caret"></span></a>
+
             <ul class="dropdown-menu">
-              <li><a href="#"><span class="glyphicon glyphicon-user"></span> Usuários</a></li>
+              <li><a href="./users.php"><span class="glyphicon glyphicon-user"></span> Usuários</a></li>
               <li><a href="#"><span class="glyphicon glyphicon-wrench"></span> Sistema</a></li>
             </ul>
           </li>          
+
           <li><a href="./logout.php"><span class="glyphicon glyphicon-off"></span> Sair</a></li>
         </ul>
       </div>
     </nav>
 ';
 ?>
+
+
