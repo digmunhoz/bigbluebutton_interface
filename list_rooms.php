@@ -115,7 +115,7 @@ require 'controller/session_validate.php';
 					<td>$room_moderatorPW</td>
 					<td><span class='badge'>$room_participantCount</span></td>
 					<td>
-					<a href='{$auth_conference_portal}?room=$name&password=$room_moderatorPW' target='_blank'><button type='button' class='btn btn-success btn-sm'>Acessar</button></a>
+					<a href='$url_join' target='_blank'><button type='button' class='btn btn-success btn-sm'>Acessar</button></a>
 					<a href='{$auth_conference_portal}?room=$name' target='_blank'><button type='button' class='btn btn-primary btn-sm'>Link do Aluno</button></a>
 					<button name=$name type='button' class='btn btn-danger btn-sm'>Encerrar</button>
 					</td>

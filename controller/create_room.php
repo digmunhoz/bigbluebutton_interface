@@ -18,7 +18,7 @@ if( isset($_POST['name']) && isset($_POST['welcome']) ) {
         $params .= "&maxParticipants={$maxParticipants}";
         $params .= "&meetingID={$name}";
         $params .= "&moderatorPW={$moderatorPW}";
-        $params .= "&name=$_SESSION['name']";
+        $params .= "&name={$name}";
         $params .= "&logoutURL=".AUTH_CONFERENCE_PORTAL;
         $params .= "&welcome={$welcome}".SALT;
 
@@ -34,7 +34,7 @@ if( isset($_POST['name']) && isset($_POST['welcome']) ) {
 	$params .= "&maxParticipants={$maxParticipants}";
 	$params .= "&meetingID={$name}";
 	$params .= "&moderatorPW={$moderatorPW}";
-	$params .= "&name=$_SESSION['name']";
+	$params .= "&name={$name}";
 	$params .= "&logoutURL=".AUTH_CONFERENCE_PORTAL;
 	$params .= "&welcome={$welcome}";
 	$params .= "&checksum={$checksum}";
