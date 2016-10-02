@@ -12,12 +12,14 @@
     $login      = $results['login'];
     $fullname   = $results['name'];
     $profile    = $results['profile'];
+    $email      = $results['email'];
 
     if(!empty($login)) {
         session_start();
         $_SESSION['username']   = $login;
         $_SESSION['fullname']   = urldecode($fullname);
         $_SESSION['profile']    = $profile;
+        $_SESSION['email']    = $email;
         header("Location:../home.php");
         exit();
       } else {
