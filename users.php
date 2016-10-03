@@ -1,8 +1,8 @@
 <?php
 
-require 'config/config.php';
-require 'controller/session_validate.php';
-require 'controller/get_users.php';
+require_once 'config/config.php';
+require_once 'controller/session_validate.php';
+require_once 'controller/get_users.php';
 
 ?>
 <!DOCTYPE html>

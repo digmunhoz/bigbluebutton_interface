@@ -1,7 +1,7 @@
 <?php
 
-	require '../config/config.php';
-	require 'session_validate.php';
+	require_once '../config/config.php';
+	require_once 'session_validate.php';
 
 	if( isset($_POST['name']) && isset($_POST['email']) && isset($_POST['password']) ) {
 
@@ -27,7 +27,7 @@
 								)");
 
         if ($results) {
-                echo '<script>alert("Usuário criado com sucesso!");</script>';
+                //echo '<script>alert("Usuário criado com sucesso!");</script>';
                 echo '<script>window.history.back();</script>';
         }
         else {
