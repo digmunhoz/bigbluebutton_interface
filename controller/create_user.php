@@ -3,12 +3,13 @@
 	require_once '../config/config.php';
 	require_once 'session_validate.php';
 
-	if( isset($_POST['name']) && isset($_POST['email']) && isset($_POST['password']) ) {
+	if( isset($_POST['name']) && isset($_POST['email']) && isset($_POST['password']) && isset($_POST['profile']) ) {
 
 		include 'connect_db.php';
 
 		$name 		= $_POST['name'];
 		$email 		= $_POST['email'];
+		$profile 	= $_POST['profile'];
 		$password 	= $_POST['password'];
 		$password	= sha1($password);
 
@@ -16,14 +17,14 @@
 									'name',
 									'email',
 									'password',
-									'profile',
-									'creation_date'
+									'creation_date',
+									'profile'
 								) VALUES (
 									'$name',
 									'$email',
 									'$password',
-									2,
-									strftime('%s','now')
+									strftime('%s','now'),
+									'$profile'
 								)");
 
         if ($results) {

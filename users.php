@@ -82,10 +82,7 @@ require_once 'controller/get_users.php';
           <td>{$profile}</td>
           <td>
           <a href='#'><button type='button' class='btn btn-success btn-sm'>Editar</button></a>
-
-          <button onClick=\"if(confirm('Deseja realmente apagar o usuario \'$name\'?'))window.location='controller/delete_user.php?login={$email}';\" type='button' class='btn btn-danger btn-sm' class='btn btn-info btn-lg' >Apagar</button>
-
-
+          <button onClick=\"if(confirm('Deseja realmente apagar o usuario \'$name\'?'))window.location='controller/delete_user.php?login={$email}';\" type='button' class='btn btn-danger btn-sm' class='btn btn-info btn-lg' >Apagar</button>      
           </td>
           </tr>
           "; } ?>
@@ -102,17 +99,27 @@ require_once 'controller/get_users.php';
             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
             <h4 class="modal-title">Novo usuário</h4>
           </div>
-          <form id="newUserFrom" action="controller/create_user.php" method="post">
+          <form id="newUserForm"  action="controller/create_user.php" method="post">
             <div class="modal-body">
-              <div class="form-group">
-                <input type="text" name="name" class="form-control" aria-describedby="emailHelp" placeholder="Nome">
+              <div class="form-group has-error">
+                <label for="name"><span class="glyphicon glyphicon-user"></span> Nome:</label>
+                <input type="text" id="name" name="name" class="form-control required" >
               </div>
               <div class="form-group">
-                <input type="email" name="email" class="form-control" aria-describedby="emailHelp" placeholder="E-mail">
+                <label for="email"><span class="glyphicon glyphicon-envelope"></span> E-mail:</label>
+                <input type="email" class="form-control required" size="50" id="email" name="email" required>
               </div>
               <div class="form-group">
-                <input type="password" name="password" class="form-control" aria-describedby="emailHelp" placeholder="Senha">
+                <label for="password"><span class="glyphicon glyphicon-eye-open"></span> Senha:</label>
+                <input type="password" id="password" name="password" class="form-control required" required>
               </div>                        
+              <div class="form-group">
+                <label for="profile"><span class="glyphicon glyphicon-wrench"></span> Perfil:</label>
+                <select id="profile" class="form-control required" id="sel1" name="profile">
+                  <option value="2" selected>Moderador</option>
+                  <option value="1">Admin</option>
+                </select>
+              </div>
             </div>
           </form>
           <div class="modal-footer">
@@ -124,14 +131,14 @@ require_once 'controller/get_users.php';
     </div><!-- /.modal -->
     <script type="text/javascript">
     function form_submit() {
-      document.getElementById("newUserFrom").submit();
+      document.getElementById("newUserForm").submit();
      }    
     </script>
     <script type="text/javascript">
         function confirm_delete() {
             return confirm("Tem certeza que deseja remover o usuário?");
         }
-    </script>        
+    </script>
     <?php include 'controller/js.php';?>
   </body>
 </html>

@@ -18,7 +18,7 @@ echo '
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" ><span class="glyphicon glyphicon-cog"></span> Configurações <span class="caret"></span></a>
             <ul class="dropdown-menu">
               <li><a href="./users.php"><span class="glyphicon glyphicon-user"></span> Usuários</a></li>
-              <li><a href="#"><span class="glyphicon glyphicon-wrench"></span> Sistema</a></li>
+              <!-- <li><a href="#"><span class="glyphicon glyphicon-wrench"></span> Sistema</a></li> -->
             </ul>
           </li>          
             ';
