@@ -51,7 +51,7 @@ require 'controller/getMeetings.php';
             } else {
               echo "
                 <br>
-                <input type='hidden' id='inputPassword' class='form-control' name='password' value='{$_GET[password]}'> 
+                <input type='hidden' id='inputPassword' class='form-control' name='password' value='$_GET[password]'> 
               ";
             } ?>
             <?php if (!isset($_GET['room'])) {
@@ -68,9 +68,9 @@ require 'controller/getMeetings.php';
                   </select>
                 " ;
             } else {
-              echo "  
+              echo "                
                 <br>
-                <input type='hidden' value='{$_GET[room]}' name='room'>
+                <input type='hidden' value='$_GET[room]' name='room'>
               ";
             } ?>
             <br><button class="btn btn-lg btn-primary btn-block" type="submit">Entrar</button>

@@ -6,5 +6,6 @@
     <script src="js/holder.min.js"></script>
     <script src="js/ie-emulation-modes-warning.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="js/dropdown.js"></script>
+    
+    <script src="js/dropdown.min.js"></script>
     <script src="js/bootstrap.min.js"></script>

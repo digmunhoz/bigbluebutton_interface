@@ -117,8 +117,8 @@ require 'controller/session_validate.php';
 					<td><span class='badge'>$room_participantCount</span></td>
 					<td>
 					<a href='$url_join' target='_blank'><button type='button' class='btn btn-success btn-sm'>Acessar</button></a>
-					<a href='{$auth_conference_portal}?room=$name' target='_blank'><button type='button' class='btn btn-primary btn-sm'>Link do Aluno</button></a>
-					<a href='controller/end_room.php?room=$name&moderatorPW=$room_moderatorPW'><button type='button' class='btn btn-danger btn-sm' onclick='return confirm_delete()'>Encerrar</button></a>
+					<a href='{$auth_conference_portal}?room=$name&password=$room_attendeePW	' target='_blank'><button type='button' class='btn btn-primary btn-sm'>Link do Aluno</button></a>
+					<button type='button' class='btn btn-danger btn-sm' onClick=\"if(confirm('Deseja realmente encerrar a sala: \'$name\'?'))window.location='controller/end_room.php?room=$name&moderatorPW=$room_moderatorPW';\">Encerrar</button>
 					</td>
 					</tr>
 				";
@@ -132,12 +132,6 @@ require 'controller/session_validate.php';
 					</div>
 				";
 				}?> 
-<script type="text/javascript">
-    function confirm_delete() {
-        return confirm("Tem certeza que deseja remover a sala?");
-    }
-</script>
-
 				</tbody>
 				</table>
 				</div>

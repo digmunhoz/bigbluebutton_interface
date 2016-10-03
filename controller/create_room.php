@@ -57,8 +57,6 @@ if( isset($_POST['name']) && isset($_POST['welcome']) ) {
                 echo '<script>window.history.back();</script>';
         }
         else {
-                echo '<script>alert("Sala de aula criada com sucesso!");</script>';
-                //echo "<script>alert('echo r: $message');</script>";
                 echo '<script>window.location="../list_rooms.php";</script>';
 	}
 }

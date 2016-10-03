@@ -7,5 +7,6 @@
 	} 
 	else {
 		$results = $db->query('SELECT * FROM users');
-	}
+	} 
+
 ?>

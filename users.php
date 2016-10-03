@@ -63,20 +63,35 @@ require 'controller/get_users.php';
         <tbody> 
           <tr>
           <?php
-          while ($row = $results->fetchArray())
-          {
+            while ($row = $results->fetchArray())
+            {
+              $login          = $row['login'];
+              $name           = $row['name'];
+              $email          = $row['email'];
+              $creation_date  = $row['creation_date'];
+              $creation_date  = gmdate('d/m/Y', $creation_date);
+              $profile        = $row['profile'];
+
+              if ($profile == 1 ) {
+                $profile = 'Admin';
+              } else  {
+                  $profile = 'Moderador';
+              }
           echo "  
-          <td>{$row['login']}</td>
-          <td>{$row['name']}</td>
-          <td>{$row['email']}</td>
-          <td>{$row['creation_date']}</td>
-          <td>{$row['profile']}</td>
+          <td>{$login}</td>
+          <td>{$name}</td>
+          <td>{$email}</td>
+          <td>{$creation_date}</td>
+          <td>{$profile}</td>
           <td>
           <a href='#'><button type='button' class='btn btn-success btn-sm'>Editar</button></a>
-          <a href='#'><button type='button' class='btn btn-danger btn-sm' class='btn btn-info btn-lg' data-toggle='modal' data-target='#myModal'>Apagar</button>
+
+          <button onClick=\"if(confirm('Deseja realmente apagar o usuario \'$login\'?'))window.location='controller/delete_user.php?login={$login}';\" type='button' class='btn btn-danger btn-sm' class='btn btn-info btn-lg' >Apagar</button>
+
+
           </td>
           </tr>
-          ";} ?>
+          "; } ?>
         </tbody>
         </table>
         </div>
@@ -90,27 +105,39 @@ require 'controller/get_users.php';
             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
             <h4 class="modal-title">Novo usuário</h4>
           </div>
-          <div class="modal-body">
-            <div class="form-group">
-              <input type="text" class="form-control" aria-describedby="emailHelp" placeholder="Nome">
+          <form id="newUserFrom" action="controller/create_user.php" method="post">
+            <div class="modal-body">
+              <div class="form-group">
+                <input type="text" name="name" class="form-control" aria-describedby="emailHelp" placeholder="Nome">
+              </div>
+              <div class="form-group">
+                <input type="text" name="login" class="form-control" placeholder="Login">
+              </div>              
+              <div class="form-group">
+                <input type="email" name="email" class="form-control" aria-describedby="emailHelp" placeholder="E-mail">
+              </div>
+              <div class="form-group">
+                <input type="password" name="password" class="form-control" aria-describedby="emailHelp" placeholder="Senha">
+              </div>                        
             </div>
-            <div class="form-group">
-              <input type="email" class="form-control" aria-describedby="emailHelp" placeholder="E-mail">
-            </div>
-            <div class="form-group">
-              <input type="password" class="form-control" aria-describedby="emailHelp" placeholder="Senha">
-            </div>                        
-            <div class="form-group">
-              <input type="password" class="form-control" aria-describedby="emailHelp" placeholder="Repita a Senha">
-            </div>
-          </div>
+          </form>
           <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
-            <button type="button" class="btn btn-primary">Salvar</button>
+            <button type="button" onclick='form_submit()' class="btn btn-primary">Salvar</button>
           </div>
         </div><!-- /.modal-content -->
       </div><!-- /.modal-dialog -->
     </div><!-- /.modal -->
+    <script type="text/javascript">
+    function form_submit() {
+      document.getElementById("newUserFrom").submit();
+     }    
+    </script>
+    <script type="text/javascript">
+        function confirm_delete() {
+            return confirm("Tem certeza que deseja remover o usuário?");
+        }
+    </script>        
     <?php include 'controller/js.php';?>
   </body>
 </html>
