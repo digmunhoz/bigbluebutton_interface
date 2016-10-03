@@ -52,7 +52,6 @@ require 'controller/get_users.php';
           <br>
           <thead>
             <tr>
-              <th><span class='glyphicon glyphicon-asterisk' aria-hidden='true'></span> Login</th>
               <th><span class='glyphicon glyphicon-user' aria-hidden='true'></span> Nome</th>
               <th><span class='glyphicon glyphicon-envelope' aria-hidden='true'></span> E-mail</th>
               <th><span class='glyphicon glyphicon-time' aria-hidden='true'></span> Data Criacao</th>
@@ -65,7 +64,6 @@ require 'controller/get_users.php';
           <?php
             while ($row = $results->fetchArray())
             {
-              $login          = $row['login'];
               $name           = $row['name'];
               $email          = $row['email'];
               $creation_date  = $row['creation_date'];
@@ -78,7 +76,6 @@ require 'controller/get_users.php';
                   $profile = 'Moderador';
               }
           echo "  
-          <td>{$login}</td>
           <td>{$name}</td>
           <td>{$email}</td>
           <td>{$creation_date}</td>
@@ -86,7 +83,7 @@ require 'controller/get_users.php';
           <td>
           <a href='#'><button type='button' class='btn btn-success btn-sm'>Editar</button></a>
 
-          <button onClick=\"if(confirm('Deseja realmente apagar o usuario \'$login\'?'))window.location='controller/delete_user.php?login={$login}';\" type='button' class='btn btn-danger btn-sm' class='btn btn-info btn-lg' >Apagar</button>
+          <button onClick=\"if(confirm('Deseja realmente apagar o usuario \'$name\'?'))window.location='controller/delete_user.php?login={$email}';\" type='button' class='btn btn-danger btn-sm' class='btn btn-info btn-lg' >Apagar</button>
 
 
           </td>
@@ -110,9 +107,6 @@ require 'controller/get_users.php';
               <div class="form-group">
                 <input type="text" name="name" class="form-control" aria-describedby="emailHelp" placeholder="Nome">
               </div>
-              <div class="form-group">
-                <input type="text" name="login" class="form-control" placeholder="Login">
-              </div>              
               <div class="form-group">
                 <input type="email" name="email" class="form-control" aria-describedby="emailHelp" placeholder="E-mail">
               </div>

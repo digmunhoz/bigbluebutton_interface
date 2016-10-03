@@ -2,11 +2,11 @@
 
 session_start();
  
-	if (!isset($_SESSION['username'])) {
+	if (!isset($_SESSION['email'])) {
 		die("Usuário não logado.<br>Por favor faça login antes.");
 	} 
 	else {
-	    $username = $_SESSION['username'];
+	    $username = $_SESSION['email'];
 		$expireAfter = SESSION_TIMEOUT;
 		 
 		if(isset($_SESSION['last_action'])){

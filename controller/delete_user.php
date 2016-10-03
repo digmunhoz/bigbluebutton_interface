@@ -9,7 +9,7 @@
 
 		$login 		= $_GET['login'];
 
-		$results = $db->query("DELETE FROM users WHERE login = '$login' ");
+		$results = $db->query("DELETE FROM users WHERE email = '$login' ");
 
         if ($results) {
                 echo '<script>window.history.back();</script>';

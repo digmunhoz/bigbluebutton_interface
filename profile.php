@@ -51,10 +51,6 @@ require 'controller/session_validate.php';
               <input type="text" class="form-control" id="usr" disabled value='<?= $_SESSION['fullname']; ?>'>
             </div>
             <div class="form-group">
-              <label for="usr">Login:</label>
-              <input type="text" class="form-control" id="usr" disabled value='<?= $_SESSION['username']; ?>'>
-            </div>
-            <div class="form-group">
               <label for="usr">E-mail:</label>
               <input type="text" class="form-control" id="usr" disabled value='<?= $_SESSION['email']; ?>'>
             </div>                        

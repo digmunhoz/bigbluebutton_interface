@@ -2,21 +2,19 @@
 
     require 'connect_db.php';
 
-    $login      = $_POST['username'];
+    $email      = $_POST['username'];
     $password   = $_POST['password'];
     $password   = sha1($password);
 
-    $results    = $db->query("SELECT * FROM users where login = '{$login}' and password = '{$password}'");
+    $results    = $db->query("SELECT * FROM users where email = '{$email}' and password = '{$password}'");
 
     $results    = $results->fetchArray();
-    $login      = $results['login'];
     $fullname   = $results['name'];
     $profile    = $results['profile'];
     $email      = $results['email'];
 
-    if(!empty($login)) {
+    if(!empty($email)) {
         session_start();
-        $_SESSION['username']   = $login;
         $_SESSION['fullname']   = urldecode($fullname);
         $_SESSION['profile']    = $profile;
         $_SESSION['email']    = $email;
