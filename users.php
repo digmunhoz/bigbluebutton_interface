@@ -101,7 +101,7 @@ require_once 'controller/get_users.php';
           </div>
           <form id="newUserForm"  action="controller/create_user.php" method="post">
             <div class="modal-body">
-              <div class="form-group has-error">
+              <div class="form-group">
                 <label for="name"><span class="glyphicon glyphicon-user"></span> Nome:</label>
                 <input type="text" id="name" name="name" class="form-control required" >
               </div>

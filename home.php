@@ -44,6 +44,34 @@ require 'controller/session_validate.php';
         <div class='col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main'>
           <h2 class='sub-header'>Página Inicial</h2>
           <div class='table-responsive'></div>
+            <div class="panel panel-default">
+              <div class="panel-body">
+                Bem vindo ao <?= TITLE ?>! 
+                <br>
+                <br>
+                Aqui você poderá fazer video conferencias e/ou dar aulas.
+                <br>
+                <br> 
+                Para fazer melhor uso da ferramenta, disponibilizamos alguns links de vídeos que ensinam a manusear a ferramenta.
+              </div>
+            </div>
+            <div class="container">
+              <div class="row">
+                <div class="col-sm-5">
+                  <h4>Configuração de Áudio</h4>
+                  <div class="embed-responsive embed-responsive-16by9">
+                    <iframe class="embed-responsive-item" src="//www.youtube.com/embed/4Y__UsUrRx0"></iframe>
+                  </div>
+                </div>
+                <div class="col-sm-5">
+                  <h4>Tutorial do Apresentador</h4>
+                  <div class="embed-responsive embed-responsive-16by9">
+                    <iframe class="embed-responsive-item" src="//www.youtube.com/embed/J9mbw00P9W0"></iframe>
+                  </div>
+                </div>                
+              </div>
+            </div>
+          </div><
         </div>
       </div>
     </div>
