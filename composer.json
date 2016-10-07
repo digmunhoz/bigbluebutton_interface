@@ -1,0 +1,14 @@
+    {
+        "name": "Bigbluebutton Interface",
+        "description": "Web interface to create, delete and manage conference rooms on BigBlueButton",
+        "authors": [
+            {
+                "name": "Diogo Munhoz Fraga",
+                "email": "digmunhoz@gmail.com"
+            }
+        ],
+        "require": {
+            "php": ">=5.2.8",
+	    "aws/aws-sdk-php": "2.*"
+        }
+    }
