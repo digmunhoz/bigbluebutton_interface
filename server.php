@@ -45,8 +45,9 @@ require_once 'controller/get_ec2_status.php';
          <ul class='nav nav-sidebar'></ul> 
         </div>
         <div class='col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main'>
-          <h2 class='sub-header'>Servidor</h2>
+          <h2 class='sub-header'>Servidor</h2>          
           <div class='table-responsive'>
+          <a href="server.php"><span class='glyphicon glyphicon-refresh pull-right btn btn-sm' aria-hidden='true' ></span></a>
 
           <?php
 
