@@ -1,7 +1,7 @@
 <?php
 
 	require '../config/config.php';
-	require 'session_validate.php';
+	require 'validate_session.php';
 
 	if( isset($_GET['login'])) {
 

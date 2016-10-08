@@ -2,7 +2,7 @@
 
     require_once './vendor/autoload.php';
     require_once './config/config.php';
-    require_once 'session_validate.php';
+    require_once 'validate_session.php';
 
     include 'aws_credentials.php';
     

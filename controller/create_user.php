@@ -1,7 +1,7 @@
 <?php
 
 	require_once '../config/config.php';
-	require_once 'session_validate.php';
+	require_once 'validate_session.php';
 
 	if( isset($_POST['name']) && isset($_POST['email']) && isset($_POST['password']) && isset($_POST['profile']) ) {
 

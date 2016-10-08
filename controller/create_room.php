@@ -1,5 +1,7 @@
 <?php
 
+//require_once 'validate_session.php';
+
 if( isset($_POST['name']) && isset($_POST['welcome']) ) {
 
 	require_once "../config/config.php";
