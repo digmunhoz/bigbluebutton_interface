@@ -1,8 +1,8 @@
 <?php
 
-		require 'vendor/autoload.php';
-		require_once 'config/config.php';
-		require_once 'controller/session_validate.php';
+		require_once '../vendor/autoload.php';
+		require_once '../config/config.php';
+		require_once 'session_validate.php';
 
 		$config = array();
 		$config['key'] = AWS_ACCESS_KEY_ID;
@@ -12,7 +12,7 @@
 		$config['version'] = 'latest'; // Or Specified
 		$ec2Client = \Aws\Ec2\Ec2Client::factory($config);
 
-		$results = $ec2Client->stopInstances(array(
+		$results = $ec2Client->startInstances(array(
 		    // InstanceIds is required
 		    'InstanceIds' => array(AWS_INSTANCE_ID),
 		));
@@ -22,10 +22,9 @@
                 echo '<script>window.history.back();</script>';
         }
         else {
-                echo "<script>alert('Erro ao desligar o servidor');</script>";
+                echo "<script>alert('Erro ao ligar o servidor');</script>";
                 echo '<script>window.history.back();</script>';
 		}
-
 
 ?>
 

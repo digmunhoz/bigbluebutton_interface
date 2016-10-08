@@ -1,8 +1,8 @@
 <?php
 
-require 'config/config.php';
-require 'controller/session_validate.php';
-require 'get_ec2_status.php';
+require_once 'config/config.php';
+require_once 'controller/session_validate.php';
+require_once 'controller/get_ec2_status.php';
 
 ?>
 <!DOCTYPE html>
@@ -69,29 +69,40 @@ require 'get_ec2_status.php';
               <br>
               <thead>
                 <tr>
-                  <th><span class='glyphicon glyphicon-facetime-video' aria-hidden='true'></span> Nome do Servidor</th>
-                  <th><span class='glyphicon glyphicon-time' aria-hidden='true'></span> Status</th>
-                  <th><span class='glyphicon glyphicon-eye-open' aria-hidden='true'></span> ID do Servidor</th>
-                  <th><span class='glyphicon glyphicon-eye-close' aria-hidden='true'></span> Tipo do Servidor</th>
+                  <th><span class='glyphicon glyphicon-cloud' aria-hidden='true'></span> Nome do Servidor</th>
+                  <th><span class='glyphicon glyphicon-check' aria-hidden='true'></span> Status</th>
+                  <th><span class='glyphicon glyphicon-info-sign' aria-hidden='true'></span> ID do Servidor</th>
+                  <th><span class='glyphicon glyphicon-tasks' aria-hidden='true'></span> Tipo do Servidor</th>
                   <th></th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
                   <td>{$instanceName}</td>
-                  <td>{$instance['State']['Name']}</td>
+                  ";
+                  if (($instance['State']['Name']) == 'stopped' ) {
+                  echo "
+                  <td><span class='glyphicon glyphicon-asterisk' style='color:red' aria-hidden='true'></span> Desligado</td> ";
+                  } elseif (($instance['State']['Name']) == 'running') {
+                  echo "
+                  <td><span class='glyphicon glyphicon-ok' style='color:green' aria-hidden='true'></span> Ligado</td>";
+                  } else {
+                  echo "
+                  <td><span class='glyphicon glyphicon-hourglass' aria-hidden='true'></span> {$instance['State']['Name']}</td>";  
+                  }
+                  echo "
                   <td>{$instance['InstanceId']}</td>
                   <td>{$instance['InstanceType']}</td>
                   <td>
                   ";
                   if (($instance['State']['Name']) == 'stopped' ) {
                   echo "
-                  <button type='button' class='btn btn-success btn-sm' onClick=\"if(confirm('Deseja realmente ligar o servidor?')) window.location='start_ec2_instance.php';\">Ligar</button>
+                  <button type='button' class='btn btn-success btn-sm' onClick=\"if(confirm('Deseja realmente ligar o servidor?')) window.location='controller/start_ec2_instance.php';\">Ligar</button>
                   ";
                   }
                   if (($instance['State']['Name']) == 'running' ) {
                   echo "
-                  <button type='button' class='btn btn-danger btn-sm' onClick=\"if(confirm('Deseja realmente desligar o servidor?')) window.location='stop_ec2_instance.php';\">Desligar</button>
+                  <button type='button' class='btn btn-danger btn-sm' onClick=\"if(confirm('Deseja realmente desligar o servidor?')) window.location='controller/stop_ec2_instance.php';\">Desligar</button>
                   ";
                   }
               echo "
