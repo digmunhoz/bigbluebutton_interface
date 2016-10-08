@@ -123,7 +123,7 @@
                                 <div class='panel-heading'>
                                     <div class='row'>
                                         <div class='col-xs-3'>
-                                            <i class='fa fa-usd fa-5x'></i>
+                                            <i class='fa fa-users fa-5x'></i>
                                         </div>
                                         <div class='col-xs-9 text-right'>
                                             <div class='huge'>{$users}</div>
@@ -131,7 +131,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <a href='#'>
+                                <a href='users.php'>
                                     <div class='panel-footer'>
                                         <span class='pull-left'>Detalhes</span>
                                         <span class='pull-right'><i class='fa fa-arrow-circle-right'></i></span>
@@ -158,7 +158,7 @@
                     </div>
                 </div>
                 <!-- /.row -->
-
+                <!--
                 <div class="row">
                     <div class="col-lg-4">
                         <div class="panel panel-default">
@@ -294,6 +294,7 @@
                         </div>
                     </div>
                 </div>
+                -->
                 <!-- /.row -->
 
             </div>
