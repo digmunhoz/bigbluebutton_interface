@@ -8,23 +8,31 @@
 
     $results    = $db->query("SELECT * FROM users where email = '{$email}' and password = '{$password}'");
 
+    if ($results) {
+
     $results    = $results->fetchArray();
     $fullname   = $results['name'];
     $profile    = $results['profile'];
     $email      = $results['email'];
 
-    if(!empty($email)) {
-        session_start();
-        $_SESSION['fullname']   = urldecode($fullname);
-        $_SESSION['profile']    = $profile;
-        $_SESSION['email']    = $email;
-        header("Location:../home.php");
-        exit();
-      } else {
-        echo '<script>alert("Usuário ou senha inválidos!");</script>';
-        echo '<script>window.history.back();</script>';
-        exit();
-      }
+	    if(!empty($email)) {
+		session_start();
+		$_SESSION['fullname']   = urldecode($fullname);
+		$_SESSION['profile']    = $profile;
+		$_SESSION['email']    = $email;
+		header("Location:../home.php");
+		exit();
+	      } else {
+		echo '<script>alert("Usuário ou senha inválidos!");</script>';
+		echo '<script>window.history.back();</script>';
+		exit();
+	      }
+         
+   }
+               
+   else {
+       echo $db->lastErrorMsg();
+   } 
 
 /*
 
