@@ -2,7 +2,7 @@
 
     require_once 'validate_session.php';
     require_once 'controller/getMeetings.php';
-
+    
 ?>
 
         <div id="page-wrapper">
@@ -72,28 +72,6 @@
                         </div>
                     </div>
                     <div class='col-lg-3 col-md-6'>
-                        <div class='panel panel-green'>
-                            <div class='panel-heading'>
-                                <div class='row'>
-                                    <div class='col-xs-3'>
-                                        <i class='fa fa-server fa-5x'></i>
-                                    </div>
-                                    <div class='col-xs-9 text-right'>
-                                        <div class='huge'>1</div>
-                                        <div>Servidores</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <a href='server.php'>
-                                <div class='panel-footer'>
-                                    <span class='pull-left'>Detalhes</span>
-                                    <span class='pull-right'><i class='fa fa-arrow-circle-right'></i></span>
-                                    <div class='clearfix'></div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class='col-lg-3 col-md-6'>
                         <div class='panel panel-yellow'>
                             <div class='panel-heading'>
                                 <div class='row'>
@@ -116,19 +94,19 @@
                         </div>
                     </div>
                     <div class='col-lg-3 col-md-6'>
-                        <div class='panel panel-red'>
+                        <div class='panel panel-green'>
                             <div class='panel-heading'>
                                 <div class='row'>
                                     <div class='col-xs-3'>
-                                        <i class='fa fa-usd fa-5x'></i>
+                                        <i class='fa fa-server fa-5x'></i>
                                     </div>
                                     <div class='col-xs-9 text-right'>
-                                        <div class='huge'>13</div>
-                                        <div>Valor</div>
+                                        <div class='huge'>1</div>
+                                        <div>Servidores</div>
                                     </div>
                                 </div>
                             </div>
-                            <a href='#'>
+                            <a href='server.php'>
                                 <div class='panel-footer'>
                                     <span class='pull-left'>Detalhes</span>
                                     <span class='pull-right'><i class='fa fa-arrow-circle-right'></i></span>
@@ -136,7 +114,33 @@
                                 </div>
                             </a>
                         </div>
-                    </div>
+                    </div>                    
+                    <?php if ($profile == 1 ) {
+                    $users = count(glob(session_save_path()."/*"));
+                    echo"
+                        <div class='col-lg-3 col-md-6'>
+                            <div class='panel panel-red'>
+                                <div class='panel-heading'>
+                                    <div class='row'>
+                                        <div class='col-xs-3'>
+                                            <i class='fa fa-usd fa-5x'></i>
+                                        </div>
+                                        <div class='col-xs-9 text-right'>
+                                            <div class='huge'>{$users}</div>
+                                            <div>Usuários Logados</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <a href='#'>
+                                    <div class='panel-footer'>
+                                        <span class='pull-left'>Detalhes</span>
+                                        <span class='pull-right'><i class='fa fa-arrow-circle-right'></i></span>
+                                        <div class='clearfix'></div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    "; }?>
                 </div>
 
                 <!-- /.row -->

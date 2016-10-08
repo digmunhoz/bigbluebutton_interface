@@ -17,7 +17,7 @@ require_once 'controller/validate_session.php';
                         </h1>
                         <ol class="breadcrumb">
                             <li class="active">
-                                <i class="fa fa-dashboard"></i> Informações de Usuário
+                                <i class="fa fa-user"></i> Informações de Usuário
                             </li>
                         </ol>
                       <div class='table-responsive'>
