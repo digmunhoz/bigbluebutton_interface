@@ -2,6 +2,7 @@
 
 require 'config/config.php';
 require 'controller/session_validate.php';
+require 'get_ec2_status.php';
 
 ?>
 <!DOCTYPE html>
@@ -45,7 +46,63 @@ require 'controller/session_validate.php';
         </div>
         <div class='col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main'>
           <h2 class='sub-header'>Servidor</h2>
-          <div class='table-responsive'></div>
+          <div class='table-responsive'>
+
+          <?php
+
+          $reservations = $result['Reservations'];
+          foreach ($reservations as $reservation) {
+              $instances = $reservation['Instances'];
+              foreach ($instances as $instance) {
+                  $instanceName = '';
+                  $stage = '';
+                  foreach ($instance['Tags'] as $tag) {
+                      if ($tag['Key'] == 'Name') {
+                          $instanceName = $tag['Value'];
+                      }
+                      if (@$tag['Key'] == 'Stage') {
+                          $stage = $tag['Value'];
+                      }
+                  }
+            echo "
+              <table class='table table-striped'>
+              <br>
+              <thead>
+                <tr>
+                  <th><span class='glyphicon glyphicon-facetime-video' aria-hidden='true'></span> Nome do Servidor</th>
+                  <th><span class='glyphicon glyphicon-time' aria-hidden='true'></span> Status</th>
+                  <th><span class='glyphicon glyphicon-eye-open' aria-hidden='true'></span> ID do Servidor</th>
+                  <th><span class='glyphicon glyphicon-eye-close' aria-hidden='true'></span> Tipo do Servidor</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>{$instanceName}</td>
+                  <td>{$instance['State']['Name']}</td>
+                  <td>{$instance['InstanceId']}</td>
+                  <td>{$instance['InstanceType']}</td>
+                  <td>
+                  ";
+                  if (($instance['State']['Name']) == 'stopped' ) {
+                  echo "
+                  <a href='#'><button type='button' class='btn btn-success btn-sm'>Ligar</button></a>
+                  ";
+                  }
+                  if (($instance['State']['Name']) == 'running' ) {
+                  echo "
+                  <button type='button' class='btn btn-danger btn-sm' onClick=\"if(confirm('Deseja realmente desligar o servidor?')) window.location='#';\">Desligar</button>
+                  ";
+                  }
+              echo "
+                  </td>
+                </tr>
+              </tbody>
+            ";
+                }
+            }
+            ?>
+          </div>
         </div>
       </div>
     </div>
