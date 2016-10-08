@@ -2,6 +2,7 @@
 
 require 'vendor/autoload.php';
 require_once 'config/config.php';
+require_once 'controller/session_validate.php';
 
 $config = array();
 $config['key'] = AWS_ACCESS_KEY_ID;

@@ -11,5 +11,8 @@ define('SESSION_TIMEOUT',        30);
 define('DB',        			'db/bbb_interface.db');
 define('ACCESS_KEY_ID',			'');
 define('SECRET_ACCESS_KEY',		'');
+define('AWS_INSTANCE_ID',		'');
+define('AWS_PROFILE',			'');
+define('AWS_REGION',			'');
 
 ?>

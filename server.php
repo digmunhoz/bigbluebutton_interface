@@ -86,12 +86,12 @@ require 'get_ec2_status.php';
                   ";
                   if (($instance['State']['Name']) == 'stopped' ) {
                   echo "
-                  <a href='#'><button type='button' class='btn btn-success btn-sm'>Ligar</button></a>
+                  <button type='button' class='btn btn-success btn-sm' onClick=\"if(confirm('Deseja realmente ligar o servidor?')) window.location='start_ec2_instance.php';\">Ligar</button>
                   ";
                   }
                   if (($instance['State']['Name']) == 'running' ) {
                   echo "
-                  <button type='button' class='btn btn-danger btn-sm' onClick=\"if(confirm('Deseja realmente desligar o servidor?')) window.location='#';\">Desligar</button>
+                  <button type='button' class='btn btn-danger btn-sm' onClick=\"if(confirm('Deseja realmente desligar o servidor?')) window.location='stop_ec2_instance.php';\">Desligar</button>
                   ";
                   }
               echo "
