@@ -142,19 +142,21 @@
                         </div>
                     "; }?>
                 </div>
-
                 <!-- /.row -->
-
                 <div class="row">
                     <div class="col-lg-12">
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h3 class="panel-title"><i class="fa fa-bar-chart-o fa-fw"></i> Area Chart</h3>
-                            </div>
-                            <div class="panel-body">
-                                <div id="morris-area-chart"></div>
-                            </div>
-                        </div>
+                     <div class="col-sm-6">
+                       <h4>Configuração de Áudio</h4>
+                       <div class="embed-responsive embed-responsive-16by9">
+                         <iframe class="embed-responsive-item" src="//www.youtube.com/embed/4Y__UsUrRx0"></iframe>
+                       </div>
+                     </div>
+                     <div class="col-sm-6">
+                       <h4>Tutorial do Apresentador</h4>
+                       <div class="embed-responsive embed-responsive-16by9">
+                         <iframe class="embed-responsive-item" src="//www.youtube.com/embed/J9mbw00P9W0"></iframe>
+                       </div>
+                     </div>                     
                     </div>
                 </div>
                 <!-- /.row -->
