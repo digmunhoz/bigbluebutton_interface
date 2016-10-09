@@ -2,6 +2,7 @@
 
 require_once 'validate_session.php';
 require_once 'get_users.php';
+require_once 'admin_control.php';
 
 ?>
 
