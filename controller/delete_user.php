@@ -15,7 +15,8 @@
                 echo '<script>window.history.back();</script>';
         }
         else {
-                echo "<script>alert('Erro na remoção do usuário');</script>";
+                $erro = $db->lastErrorMsg();
+                echo "<script>alert('Erro: $erro');</script>";
                 echo '<script>window.history.back();</script>';
 		}
 
