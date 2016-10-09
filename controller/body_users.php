@@ -25,10 +25,10 @@ require_once 'get_users.php';
                             <br>
                             <thead>
                               <tr>
-                                <th><span class='glyphicon glyphicon-user' aria-hidden='true'></span> Nome</th>
-                                <th><span class='glyphicon glyphicon-envelope' aria-hidden='true'></span> E-mail</th>
-                                <th><span class='glyphicon glyphicon-time' aria-hidden='true'></span> Data Criacao</th>
-                                <th><span class='glyphicon glyphicon-cog' aria-hidden='true'></span> Perfil</th>
+                                <th><i class="fa fa-user"></i> Nome</th>
+                                <th><i class="fa fa-envelope"></i> E-mail</th>
+                                <th><i class="fa fa-calendar"></i></span> Data Criacao</th>
+                                <th><i class="fa fa-user"></i> Perfil</th>
                                 <th></th>
                               </tr>
                             </thead>
@@ -72,51 +72,41 @@ require_once 'get_users.php';
                               <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                               <h4 class="modal-title">Novo usuário</h4>
                             </div>
-                            <form id="newUserForm"  action="controller/create_user.php" method="post">
+                            <form data-toggle="validator" role="form" id="newUserForm"  action="controller/create_user.php" method="post">
                               <div class="modal-body">
                                 <div class="form-group">
-                                  <label for="name"><span class="glyphicon glyphicon-user"></span> Nome:</label>
-                                  <input type="text" id="name" name="name" class="form-control required" >
+                                  <label for="name"><i class="fa fa-user"></i> Nome:</label>
+                                  <input type="text" id="name" name="name" class="form-control" required >
                                 </div>
                                 <div class="form-group">
-                                  <label for="email"><span class="glyphicon glyphicon-envelope"></span> E-mail:</label>
-                                  <input type="email" class="form-control required" size="50" id="email" name="email" required>
+                                  <label for="inputEmail" class="control-label"><i class="fa fa-envelope"></i> E-mail</label>
+                                  <input type="email" class="form-control" id="inputEmail" name="email" data-error="Endereço de E-mail inválido" required>
+                                  <div class="help-block with-errors"></div>
                                 </div>
                                 <div class="form-group">
-                                  <label for="password"><span class="glyphicon glyphicon-eye-open"></span> Senha:</label>
+                                  <label for="password"><i class="fa fa-key"></i> Senha:</label>
                                   <input type="password" id="password" name="password" class="form-control required" required>
                                 </div>                        
                                 <div class="form-group">
-                                  <label for="profile"><span class="glyphicon glyphicon-wrench"></span> Perfil:</label>
+                                  <label for="profile"><i class="fa fa-user"></i> Perfil:</label>
                                   <select id="profile" class="form-control required" id="sel1" name="profile">
                                     <option value="2" selected>Moderador</option>
                                     <option value="1">Admin</option>
                                   </select>
                                 </div>
                               </div>
+                              <div class="modal-footer">                              
+                                <div class="form-group">
+                                  <button type="submit" class="btn btn-primary">Salvar</button>
+                                </div>                              
+                              </div>                              
                             </form>
-                            <div class="modal-footer">
-                              <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
-                              <button type="button" onclick='form_submit()' class="btn btn-primary">Salvar</button>
-                            </div>
                           </div><!-- /.modal-content -->
                         </div><!-- /.modal-dialog -->
                       </div><!-- /.modal -->
-                      <script type="text/javascript">
-                      function form_submit() {
-                        document.getElementById("newUserForm").submit();
-                       }    
-                      </script>
-                      <script type="text/javascript">
-                          function confirm_delete() {
-                              return confirm("Tem certeza que deseja remover o usuário?");
-                          }
-                      </script>
                     </div>
                 </div>
                 <!-- /.row -->
-
             </div>
             <!-- /.container-fluid -->
-
         </div>

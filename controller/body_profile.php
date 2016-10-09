@@ -21,18 +21,24 @@ require_once 'controller/validate_session.php';
                             </li>
                         </ol>
                       <div class='table-responsive'>
-                        <div class="form-group">
-                          <label for="usr">Nome:</label>
-                          <input type="text" class="form-control" id="usr" disabled value='<?= $_SESSION['fullname']; ?>'>
-                        </div>
-                        <div class="form-group">
-                          <label for="usr">E-mail:</label>
-                          <input type="text" class="form-control" id="usr" disabled value='<?= $_SESSION['email']; ?>'>
-                        </div>                        
-                        <div class="form-group">
-                          <label for="pwd">Password:</label>
-                          <input type="password" class="form-control" id="pwd" disabled value='*********'>
-                        </div>      
+                        <form data-toggle="validator" role="form" id="newUserForm"  action="controller/update_user.php" method="post">
+                          <div class="form-group">
+                            <label for="name"><i class="fa fa-user"></i> Nome:</label>
+                            <input type="text" id="name" name="name" class="form-control" value='<?= $_SESSION['fullname']; ?>' required >
+                          </div>                          
+                          <div class="form-group">
+                            <label for="inputEmail" class="control-label"><i class="fa fa-envelope"></i> E-mail:</label>
+                            <input type="email" class="form-control" id="inputEmail" name="email" data-error="Endereço de E-mail inválido" value='<?= $_SESSION['email']; ?>' required>
+                            <div class="help-block with-errors"></div>
+                          </div>
+                          <div class="form-group">
+                            <label for="password"><i class="fa fa-key"></i> Senha:</label>
+                            <input type="password" id="password" name="password" class="form-control required" required>
+                          </div>                        
+                          <div class="form-group">
+                            <button type="submit" class="btn btn-primary">Atualizar</button>
+                          </div>                                                        
+                        </form>      
                       </div>
                     </div>
 

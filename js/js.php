@@ -8,4 +8,5 @@
     <script src="js/plugins/morris/raphael.min.js"></script>
     <script src="js/plugins/morris/morris.min.js"></script>
     <script src="js/plugins/morris/morris-data.js"></script>
+    <script src="js/validator.min.js"></script>
     <script src="https://use.fontawesome.com/d3dc9f2028.js"></script>

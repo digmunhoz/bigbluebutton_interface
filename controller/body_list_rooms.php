@@ -40,7 +40,7 @@ require 'getMeetings.php';
                             <thead>
                                 <tr>
                                     <th><i class='fa fa-video-camera'></i> Nome da Sala</th>
-                                    <th><i class='fa fa-info-circle'></i> Data Criacao</th>
+                                    <th><i class='fa fa-calendar'></i> Data Criacao</th>
                                     <th><i class='fa fa-unlock'></i> Senha Aluno</th>
                                     <th><i class='fa fa-key'></i> Senha Professor</th>
                                     <th><i class='fa fa-users'></i> Participantes</th>
