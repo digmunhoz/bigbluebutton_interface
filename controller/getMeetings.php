@@ -1,6 +1,6 @@
 <?php
 
-        require_once 'validate_session.php';
+        //require_once 'validate_session.php';
 
         $data_to_post = array();
         //$data_to_post['checksum'] = CHECKSUM;

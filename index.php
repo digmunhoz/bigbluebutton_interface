@@ -64,7 +64,7 @@ require 'config/config.php';
           margin-right: auto;
           padding-left: 15px;
           padding-right: 15px;
-          padding-top: 80px;
+          padding-top: 120px;
       }
 
       .form-signin {
