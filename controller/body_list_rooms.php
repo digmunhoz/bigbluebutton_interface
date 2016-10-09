@@ -39,7 +39,6 @@
                                     <th><i class='fa fa-video-camera'></i> {$lang['ROOMS_PAGE_ROOM_NAME']}</th>
                                     <th><i class='fa fa-calendar'></i> {$lang['ROOMS_PAGE_ROOM_DATE']}</th>
                                     <th><i class='fa fa-unlock'></i> {$lang['ROOMS_PAGE_ROOM_ATTEPW']}</th>
-                                    <th><i class='fa fa-key'></i> {$lang['ROOMS_PAGE_ROOM_MODPW']}</th>
                                     <th><i class='fa fa-users'></i> {$lang['ROOMS_PAGE_ROOM_PART']}</th>
                                     <th></th>
                                 </tr>
@@ -59,6 +58,8 @@
                         $room_name              = urlencode($meeting->meetingName);
                         $room_name              = str_replace(' ', '+', $room_name);
                         $room_date              = $meeting->createDate;
+                        //$room_date              = substr($room_date,0, 20);
+
                         $room_attendeePW        = $meeting->attendeePW;
                         $room_participantCount  = $meeting->participantCount;
                         $room_moderatorPW       = $meeting->moderatorPW;
@@ -97,7 +98,6 @@
                             <td><a href='detail_room.php?room=$name&moderatorPW=$room_moderatorPW'>$name</a></td>
                             <td>$room_date</td>
                             <td>$room_attendeePW</td>
-                            <td>$room_moderatorPW</td>
                             <td><span class='badge'>$room_participantCount</span></td>
                             <td>
                             <a href='$url_join' target='_blank'><button type='button' class='btn btn-success btn-sm'>{$lang['ROOMS_PAGE_MODLINK']}</button></a>

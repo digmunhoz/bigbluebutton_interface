@@ -41,7 +41,7 @@ $lang['ROOMS_PAGE_ROOM_DATE']	= 'Data de criação';
 $lang['ROOMS_PAGE_ROOM_ATTEPW']	= 'Senha Aluno';
 $lang['ROOMS_PAGE_ROOM_MODPW']	= 'Senha Moderador';
 $lang['ROOMS_PAGE_ROOM_PART']	= 'Participantes';
-$lang['ROOMS_PAGE_MODLINK'] 	= 'Apresentador';
+$lang['ROOMS_PAGE_MODLINK'] 	= 'Professor';
 $lang['ROOMS_PAGE_ATTLINK'] 	= 'Aluno';
 $lang['ROOMS_PAGE_FINISH'] 		= 'Encerrar';
 
