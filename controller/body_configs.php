@@ -17,9 +17,9 @@ require_once 'admin_control.php';
                                 <i class="fa fa-sliders"></i> <?= $lang['CONFIGS_PAGE_SUBTITLE'] ?>
                             </li>
                         </ol>     
-                        <h3><?= $lang['CONFIGS_PAGE_GEN'] ?> </h3>
-                        <br>
-                        <form role="form">
+                        <div class="panel panel-default">
+                          <div class="panel-heading"><i class="fa fa-wrench"></i> <b><?= $lang['CONFIGS_PAGE_GEN'] ?></b></div>
+                          <div class="panel-body"> 
                             <fieldset disabled>
                                 <div class="form-group">                                            
                                     <div class="col-xs-3">
@@ -41,9 +41,11 @@ require_once 'admin_control.php';
                                     </div>                                            
                                 </div>                                    
                             </fieldset>
-                            <br>                                   
-                            <h3><?= $lang['CONFIGS_PAGE_BBB_TITLE'] ?> </h3>
-                            <br>
+                          </div>
+                        </div>
+                        <div class="panel panel-default">
+                          <div class="panel-heading"><i class="fa fa-server"></i> <b><?= $lang['CONFIGS_PAGE_BBB_TITLE'] ?></b></div>
+                          <div class="panel-body"> 
                             <fieldset disabled>
                                 <div class="form-group">                                        
                                     <div class="col-xs-3">
@@ -76,9 +78,11 @@ require_once 'admin_control.php';
                                     </div>                                            
                                 </div>                                    
                             </fieldset>                                                                
-                            <br>                                   
-                            <h3><?= $lang['CONFIGS_PAGE_AWS_TITLE'] ?> </h3>
-                            <br>
+                          </div>
+                        </div>
+                        <div class="panel panel-default">
+                          <div class="panel-heading"><i class="fa fa-cloud"></i> <b><?= $lang['CONFIGS_PAGE_AWS_TITLE'] ?></b></div>
+                          <div class="panel-body"> 
                             <fieldset disabled>
                                 <div class="form-group">                                        
                                     <div class="col-xs-3">
@@ -122,7 +126,8 @@ require_once 'admin_control.php';
                                     </div>                                            
                                 </div>                                    
                             </fieldset>                                                                           
-                        </form>
+                          </div>
+                        </div>
                     </div>
                 </div>
                 <!-- /.row -->
