@@ -25,7 +25,12 @@ $profile  = $_SESSION['profile'];
                <li class='dropdown'>
                 <a href='#' class='dropdown-toggle' data-toggle='dropdown' role='button' ><i class='fa fa-cogs'></i> {$lang['HEADER_SETTINGS']} <span class='caret'></span></a>
                 <ul class='dropdown-menu'>
-                  <li><a href='users.php'><i class='fa fa-users'></i> {$lang['HEADER_SETTINGS_USERS']}</a></li>
+                  <li>
+                    <a href='users.php'><i class='fa fa-users'></i> {$lang['HEADER_SETTINGS_USERS']}</a>
+                  </li>
+                  <li>
+                    <a href='configs.php'><i class='fa fa-sliders'></i> {$lang['HEADER_SETTINGS_SYSTEM']}</a>
+                  </li>                  
                 </ul>
                </li> ";} ?>
                 <li class="dropdown">

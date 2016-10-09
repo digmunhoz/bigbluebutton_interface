@@ -20,6 +20,7 @@ $lang['ALERT_DELETE_USER'] 		= 'Deseja realmente remover o usuário:';
 
 $lang['HEADER_SETTINGS'] 		= 'Configurações';
 $lang['HEADER_SETTINGS_USERS'] 	= 'Usuários';
+$lang['HEADER_SETTINGS_SYSTEM']	= 'Sistema';
 $lang['HEADER_USER_PROFILE'] 	= 'Perfil';
 $lang['HEADER_USER_LOGOUT'] 	= 'Sair';
 
@@ -112,5 +113,21 @@ $lang['PROFILE_PAGE_EMAIL_MSG'] = 'Endereço de E-mail inválido';
 $lang['PROFILE_PAGE_PASSWORD'] 	= 'Senha';
 $lang['PROFILE_PAGE_UPDATE'] 	= 'Atualizar';
 
+// Configs Page
+
+$lang['CONFIGS_PAGE_TITLE'] 	= 'Configurações';
+$lang['CONFIGS_PAGE_SUBTITLE'] 	= 'Configurações do Sistema';
+$lang['CONFIGS_PAGE_GEN'] 		= 'Configurações Gerais:';
+$lang['CONFIGS_PAGE_GEN_TITLE'] = 'Título:';
+$lang['CONFIGS_PAGE_GEN_LOGO'] 	= 'Logo:';
+$lang['CONFIGS_PAGE_BBB_TITLE']	= 'Servidor BigBlueButton:';
+$lang['CONFIGS_PAGE_BBB_API'] 	= 'API:';
+$lang['CONFIGS_PAGE_BBB_SALT'] 	= 'SALT:';
+$lang['CONFIGS_PAGE_BBB_PORT']	= 'Portal:';
+$lang['CONFIGS_PAGE_AWS_TITLE']	= 'AWS:';
+$lang['CONFIGS_PAGE_AWS_AK']	= 'Access Key:';
+$lang['CONFIGS_PAGE_AWS_SK']	= 'Secret Key:';
+$lang['CONFIGS_PAGE_AWS_ID']	= 'Instace ID:';
+$lang['CONFIGS_PAGE_AWS_REG']	= 'Região:';
 
 ?>
