@@ -56,8 +56,8 @@
 
                         $name                   = $meeting->meetingName;
                         //$room_name              = str_replace(' ', '+', $meeting->meetingName);
-                        //$room_name              = str_replace(' ', '+', $meeting->meetingName);
                         $room_name              = urlencode($meeting->meetingName);
+                        $room_name              = str_replace(' ', '+', $room_name);
                         $room_date              = $meeting->createDate;
                         $room_attendeePW        = $meeting->attendeePW;
                         $room_participantCount  = $meeting->participantCount;
