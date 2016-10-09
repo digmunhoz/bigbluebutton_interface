@@ -41,7 +41,7 @@ $profile  = $_SESSION['profile'];
                         </li>
                         <li class="divider"></li>
                         <li>
-                            <a href="logout.php"><i class="fa fa-fw fa-power-off"></i> <?= $lang['HEADER_USER_LOGOUT'] ?></a>
+                            <a href="logout.php"><i class="fa fa-fw fa-sign-out"></i> <?= $lang['HEADER_USER_LOGOUT'] ?></a>
                         </li>
                     </ul>
                 </li>                       
