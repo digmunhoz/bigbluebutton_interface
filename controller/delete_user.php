@@ -16,7 +16,7 @@
         }
         else {
                 $erro = $db->lastErrorMsg();
-                echo "<script>alert('Erro: $erro');</script>";
+                echo "<script>alert('Error: $erro');</script>";
                 echo '<script>window.history.back();</script>';
 		}
 

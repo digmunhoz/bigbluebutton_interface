@@ -1,7 +1,7 @@
 <?php
 
-require_once 'validate_session.php';
-require 'getMeetings.php';
+    require_once 'validate_session.php';
+    require 'getMeetings.php';
 
 ?>
         <div id="page-wrapper">
@@ -55,12 +55,15 @@ require 'getMeetings.php';
                         ";
 
                         $name                   = $meeting->meetingName;
-                        $room_name              = str_replace(' ', '+', $meeting->meetingName);
+                        //$room_name              = str_replace(' ', '+', $meeting->meetingName);
+                        //$room_name              = str_replace(' ', '+', $meeting->meetingName);
+                        $room_name              = urlencode($meeting->meetingName);
                         $room_date              = $meeting->createDate;
                         $room_attendeePW        = $meeting->attendeePW;
                         $room_participantCount  = $meeting->participantCount;
                         $room_moderatorPW       = $meeting->moderatorPW;
-                        $fullname               = str_replace(' ', '+', $_SESSION['fullname']);
+                        //$fullname               = str_replace(' ', '+', $_SESSION['fullname']);
+                        $fullname               = urlencode($_SESSION['fullname']);
 
                         $params_join_checksum  = "joinredirect=true";
                         $params_join_checksum .= "&fullName=".$fullname;
