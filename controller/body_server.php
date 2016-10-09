@@ -75,7 +75,7 @@ require_once 'get_ec2_status.php';
                               }
                               if (($instance['State']['Name']) == 'running' ) {
                               echo "
-                              <button type='button' class='btn btn-danger btn-sm' onClick=\"if(confirm('Deseja realmente desligar o servidor?')) window.location='controller/stop_ec2_instance.php';\">{$lang['SERVER_PAGE_TURNON']}</button>
+                              <button type='button' class='btn btn-danger btn-sm' onClick=\"if(confirm('Deseja realmente desligar o servidor?')) window.location='controller/stop_ec2_instance.php';\">{$lang['SERVER_PAGE_TURNOFF']}</button>
                               ";
                               }
                           echo "

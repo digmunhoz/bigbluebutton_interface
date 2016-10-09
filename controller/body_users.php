@@ -55,7 +55,7 @@ require_once 'admin_control.php';
                             <td>{$profile}</td>
                             <td>
                             <a href='#'><button type='button' class='btn btn-success btn-sm'>{$lang['USERS_PAGE_EDIT']}</button></a>
-                            <button onClick=\"if(confirm('Deseja realmente apagar o usuario \'$name\'?'))window.location='controller/delete_user.php?login={$email}';\" type='button' class='btn btn-danger btn-sm' class='btn btn-info btn-lg' >{$lang['USERS_PAGE_DELETE']}</button>      
+                            <button onClick=\"if(confirm('{$lang['ALERT_DELETE_USER']} \'$name\'?'))window.location='controller/delete_user.php?login={$email}';\" type='button' class='btn btn-danger btn-sm' class='btn btn-info btn-lg' >{$lang['USERS_PAGE_DELETE']}</button>      
                             </td>
                             </tr>
                             "; } ?>
@@ -70,34 +70,34 @@ require_once 'admin_control.php';
                           <div class="modal-content">
                             <div class="modal-header">
                               <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                              <h4 class="modal-title">Novo usuário</h4>
+                              <h4 class="modal-title"><?= $lang['USERS_PAGE_NEW_USER'] ?></h4>
                             </div>
                             <form data-toggle="validator" role="form" id="newUserForm"  action="controller/create_user.php" method="post">
                               <div class="modal-body">
                                 <div class="form-group">
-                                  <label for="name"><i class="fa fa-user"></i> Nome:</label>
+                                  <label for="name"><i class="fa fa-user"></i> <?= $lang['USERS_PAGE_USER_NAME'] ?></label>
                                   <input type="text" id="name" name="name" class="form-control" required >
                                 </div>
                                 <div class="form-group">
-                                  <label for="inputEmail" class="control-label"><i class="fa fa-envelope"></i> E-mail</label>
+                                  <label for="inputEmail" class="control-label"><i class="fa fa-envelope"></i> <?= $lang['USERS_PAGE_USER_EMAIL'] ?></label>
                                   <input type="email" class="form-control" id="inputEmail" name="email" data-error="Endereço de E-mail inválido" required>
                                   <div class="help-block with-errors"></div>
                                 </div>
                                 <div class="form-group">
-                                  <label for="password"><i class="fa fa-key"></i> Senha:</label>
+                                  <label for="password"><i class="fa fa-key"></i> <?= $lang['USERS_PAGE_NEW_PW'] ?></label>
                                   <input type="password" id="password" name="password" class="form-control required" required>
                                 </div>                        
                                 <div class="form-group">
-                                  <label for="profile"><i class="fa fa-user"></i> Perfil:</label>
+                                  <label for="profile"><i class="fa fa-user"></i> <?= $lang['USERS_PAGE_USER_PROF'] ?></label>
                                   <select id="profile" class="form-control required" id="sel1" name="profile">
-                                    <option value="2" selected>Moderador</option>
-                                    <option value="1">Admin</option>
+                                    <option value="2" selected><?= $lang['USERS_PAGE_PROF_MOD'] ?></option>
+                                    <option value="1"><?= $lang['USERS_PAGE_PROF_ADMIN'] ?></option>
                                   </select>
                                 </div>
                               </div>
                               <div class="modal-footer">                              
                                 <div class="form-group">
-                                  <button type="submit" class="btn btn-primary">Salvar</button>
+                                  <button type="submit" class="btn btn-primary"><?= $lang['USERS_PAGE_NEW_BUTTON'] ?></button>
                                 </div>                              
                               </div>                              
                             </form>

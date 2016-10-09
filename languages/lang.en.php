@@ -11,6 +11,10 @@ $lang = array();
 
 $lang['ALERT_CONNECT_ERROR'] 	= 'Connection Problem:';
 $lang['ALERT_CONNECT_MSG']	 	= 'It was not possible to establish the connection to the server';
+$lang['ALERT_INFO'] 			= 'Info!';
+$lang['ALERT_NO_ROOM'] 			= 'No room available.';
+$lang['ALERT_FINISH_ROOM'] 		= 'You really want to finish the room:';
+$lang['ALERT_DELETE_USER'] 		= 'You really want to delete user:';
 
 // Header
 
@@ -27,6 +31,36 @@ $lang['MENU_ROOMS_LIST'] 		= 'List';
 $lang['MENU_ROOMS_CREATE'] 		= 'Create';
 $lang['MENU_SERVER']	 		= 'Server';
 
+// Rooms Page
+
+$lang['ROOMS_PAGE_TITLE'] 		= 'Rooms';
+$lang['ROOMS_PAGE_SUBTITLE'] 	= 'Created rooms';
+$lang['ROOMS_PAGE_ROOM_NAME']	= 'Name';
+$lang['ROOMS_PAGE_ROOM_DATE']	= 'Creation Date';
+$lang['ROOMS_PAGE_ROOM_ATTEPW']	= 'Attendee PW';
+$lang['ROOMS_PAGE_ROOM_MODPW']	= 'Moderator PW';
+$lang['ROOMS_PAGE_ROOM_PART']	= 'Participants';
+$lang['ROOMS_PAGE_MODLINK'] 	= 'Presenter';
+$lang['ROOMS_PAGE_ATTLINK'] 	= 'Attendee';
+$lang['ROOMS_PAGE_FINISH'] 		= 'Finish';
+
+// Room Details
+
+$lang['ROOM_DET_PAGE_TITLE'] 	= 'Room Details';
+$lang['ROOM_DET_PAGE_SUBTITLE']	= 'Details of room:';
+$lang['ROOM_DET_ROOM_NAME']		= 'Name';
+$lang['ROOM_DET_ROOM_PROFILE']	= 'Profile';
+$lang['ROOM_DET_ROOM_PRES']		= 'Presenter';
+$lang['ROOM_DET_ROOM_LISTEN']	= 'Listen';
+$lang['ROOM_DET_ROOM_MIC']		= 'Microfone';
+
+// Room Create
+
+$lang['ROOM_CT_PAGE_TITLE'] 	= 'Creation Rooms';
+$lang['ROOM_CT_PAGE_SUBTITLE'] 	= 'Create and customize your conference';
+$lang['ROOM_CT_FORM_NAME']	 	= 'Name';
+$lang['ROOM_CT_FORM_MSG'] 		= 'Welcome Message';
+
 // Users Page
 
 $lang['USERS_PAGE_TITLE'] 		= 'Users';
@@ -37,6 +71,11 @@ $lang['USERS_PAGE_USER_DATE']	= 'Creation Date';
 $lang['USERS_PAGE_USER_PROF']	= 'Profile';
 $lang['USERS_PAGE_EDIT']		= 'Edit';
 $lang['USERS_PAGE_DELETE']		= 'Delete';
+$lang['USERS_PAGE_NEW_USER']	= 'New User';
+$lang['USERS_PAGE_NEW_PW']		= 'Password';
+$lang['USERS_PAGE_NEW_BUTTON']	= 'Create';
+$lang['USERS_PAGE_PROF_MOD']	= 'Moderator';
+$lang['USERS_PAGE_PROF_ADMIN']	= 'Admin';
 
 // Dashboard Page
 

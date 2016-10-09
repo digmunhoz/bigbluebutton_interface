@@ -4,20 +4,17 @@ require_once 'validate_session.php';
 require 'getMeetings.php';
 
 ?>
-
         <div id="page-wrapper">
-
             <div class="container-fluid">
-
                 <!-- Page Heading -->
                 <div class="row">
-                    <div class="col-lg-12">
+                    <div class="col-lg-12">    
                         <h1 class="page-header">
-                            Lista de Salas
+                            <?= $lang['ROOMS_PAGE_TITLE'] ?>
                         </h1>
                         <ol class="breadcrumb">
                             <li class="active">
-                                <i class="fa fa-list"></i> Relação de salas de aula criadas                                
+                                <i class="fa fa-list"></i> <?= $lang['ROOMS_PAGE_SUBTITLE'] ?>                                
                             </li>
                             <a href="list_rooms.php"><i class='fa fa-refresh fa-pull-right'></i></a>
                         </ol>  
@@ -28,7 +25,7 @@ require 'getMeetings.php';
                                 <div class='col-lg-12'>
                                     <div class='alert alert-danger alert-dismissable'>
                                         <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
-                                        <i class='fa fa-exclamation'></i>  <strong>Problema de conexão:</strong> Não foi possível estabelecer a conexão com o servidor.
+                                        <i class='fa fa-exclamation'></i>  <strong>{$lang['ALERT_CONNECT_ERROR']}</strong> {$lang['ALERT_CONNECT_MSG']}
                                     </div>
                                 </div>
                             </div>
@@ -39,14 +36,14 @@ require 'getMeetings.php';
                             <table class='table table-striped'>
                             <thead>
                                 <tr>
-                                    <th><i class='fa fa-video-camera'></i> Nome da Sala</th>
-                                    <th><i class='fa fa-calendar'></i> Data Criacao</th>
-                                    <th><i class='fa fa-unlock'></i> Senha Aluno</th>
-                                    <th><i class='fa fa-key'></i> Senha Professor</th>
-                                    <th><i class='fa fa-users'></i> Participantes</th>
+                                    <th><i class='fa fa-video-camera'></i> {$lang['ROOMS_PAGE_ROOM_NAME']}</th>
+                                    <th><i class='fa fa-calendar'></i> {$lang['ROOMS_PAGE_ROOM_DATE']}</th>
+                                    <th><i class='fa fa-unlock'></i> {$lang['ROOMS_PAGE_ROOM_ATTEPW']}</th>
+                                    <th><i class='fa fa-key'></i> {$lang['ROOMS_PAGE_ROOM_MODPW']}</th>
+                                    <th><i class='fa fa-users'></i> {$lang['ROOMS_PAGE_ROOM_PART']}</th>
                                     <th></th>
                                 </tr>
-                            </thead>
+                            </thead>    
                         ";
                         echo "              
                         <tbody> 
@@ -93,7 +90,6 @@ require 'getMeetings.php';
 
                         $url_end = BIGBLUEBUTTON_API."{$params_end}";
                         $auth_conference_portal = AUTH_CONFERENCE_PORTAL;
-
                         echo "
                             <td><a href='detail_room.php?room=$name&moderatorPW=$room_moderatorPW'>$name</a></td>
                             <td>$room_date</td>
@@ -101,9 +97,9 @@ require 'getMeetings.php';
                             <td>$room_moderatorPW</td>
                             <td><span class='badge'>$room_participantCount</span></td>
                             <td>
-                            <a href='$url_join' target='_blank'><button type='button' class='btn btn-success btn-sm'>Acessar</button></a>
-                            <a href='{$auth_conference_portal}?room=$name&password=$room_attendeePW ' target='_blank'><button type='button' class='btn btn-primary btn-sm'>Link do Aluno</button></a>
-                            <button type='button' class='btn btn-danger btn-sm' onClick=\"if(confirm('Deseja realmente encerrar a sala: \'$name\'?'))window.location='controller/end_room.php?room=$name&moderatorPW=$room_moderatorPW';\">Encerrar</button>
+                            <a href='$url_join' target='_blank'><button type='button' class='btn btn-success btn-sm'>{$lang['ROOMS_PAGE_MODLINK']}</button></a>
+                            <a href='{$auth_conference_portal}?room=$name&password=$room_attendeePW ' target='_blank'><button type='button' class='btn btn-primary btn-sm'>{$lang['ROOMS_PAGE_ATTLINK']}</button></a>
+                            <button type='button' class='btn btn-danger btn-sm' onClick=\"if(confirm('{$lang['ALERT_FINISH_ROOM']} \'$name\'?'))window.location='controller/end_room.php?room=$name&moderatorPW=$room_moderatorPW';\">{$lang['ROOMS_PAGE_FINISH']}</button>
                             </td>
                             </tr>
                         ";
@@ -113,7 +109,7 @@ require 'getMeetings.php';
 
                         echo "
                             <div class='alert alert-info'>
-                            <strong>Info!</strong> Nenhuma sala disponível.</strong>
+                            <strong>{$lang['ALERT_INFO']}</strong> {$lang['ALERT_NO_ROOM']}</strong>
                             </div>
                         ";
                         }?> 

@@ -11,6 +11,10 @@ $lang = array();
 
 $lang['ALERT_CONNECT_ERROR'] 	= 'Problema de conexão:';
 $lang['ALERT_CONNECT_MSG']	 	= 'Não foi possível estabelecer a conexão com o servidor.';
+$lang['ALERT_INFO'] 			= 'Info!';
+$lang['ALERT_NO_ROOM'] 			= 'Nenhuma sala disponível.';
+$lang['ALERT_FINISH_ROOM'] 		= 'Deseja realmente finalizar a sala:';
+$lang['ALERT_DELETE_USER'] 		= 'Deseja realmente remover o usuário:';
 
 // Header
 
@@ -27,6 +31,36 @@ $lang['MENU_ROOMS_LIST'] 		= 'Listar';
 $lang['MENU_ROOMS_CREATE'] 		= 'Criar';
 $lang['MENU_SERVER']	 		= 'Servidor';
 
+// Rooms Page
+
+$lang['ROOMS_PAGE_TITLE'] 		= 'Salas';
+$lang['ROOMS_PAGE_SUBTITLE'] 	= 'Relação de salas de aula criadas';
+$lang['ROOMS_PAGE_ROOM_NAME']	= 'Nome';
+$lang['ROOMS_PAGE_ROOM_DATE']	= 'Data de criação';
+$lang['ROOMS_PAGE_ROOM_ATTEPW']	= 'Senha Aluno';
+$lang['ROOMS_PAGE_ROOM_MODPW']	= 'Senha Moderador';
+$lang['ROOMS_PAGE_ROOM_PART']	= 'Participantes';
+$lang['ROOMS_PAGE_MODLINK'] 	= 'Apresentador';
+$lang['ROOMS_PAGE_ATTLINK'] 	= 'Aluno';
+$lang['ROOMS_PAGE_FINISH'] 		= 'Encerrar';
+
+// Room Details
+
+$lang['ROOM_DET_PAGE_TITLE'] 	= 'Detalhes da Sala';
+$lang['ROOM_DET_PAGE_SUBTITLE'] = 'Detalhes da sala de aula:';
+$lang['ROOM_DET_ROOM_NAME']		= 'Nome';
+$lang['ROOM_DET_ROOM_PROFILE']	= 'Perfil';
+$lang['ROOM_DET_ROOM_PRES']		= 'Apresentador';
+$lang['ROOM_DET_ROOM_LISTEN']	= 'Ouvinte';
+$lang['ROOM_DET_ROOM_MIC']		= 'Microfone';
+
+// Room Create
+
+$lang['ROOM_CT_PAGE_TITLE'] 	= 'Criação de Salas';
+$lang['ROOM_CT_PAGE_SUBTITLE'] 	= 'Crie e personalize sua sala de aula';
+$lang['ROOM_CT_FORM_NAME']	 	= 'Nome';
+$lang['ROOM_CT_FORM_MSG'] 		= 'Mensagem de boas vindas';
+
 // Users Page
 
 $lang['USERS_PAGE_TITLE'] 		= 'Usuários';
@@ -37,6 +71,11 @@ $lang['USERS_PAGE_USER_DATE']	= 'Data de Criação';
 $lang['USERS_PAGE_USER_PROF']	= 'Perfil';
 $lang['USERS_PAGE_EDIT']		= 'Editar';
 $lang['USERS_PAGE_DELETE']		= 'Apagar';
+$lang['USERS_PAGE_NEW_USER']	= 'Novo Usuário';
+$lang['USERS_PAGE_NEW_PW']		= 'Senha';
+$lang['USERS_PAGE_NEW_BUTTON']	= 'Criar';
+$lang['USERS_PAGE_PROF_MOD']	= 'Moderador';
+$lang['USERS_PAGE_PROF_ADMIN']	= 'Admin';
 
 // Dashboard Page
 
