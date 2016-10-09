@@ -13,11 +13,11 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <h1 class="page-header">
-                            Dashboard
+                            <?= $lang['DASH_PAGE_TITLE'] ?>
                         </h1>
                         <ol class="breadcrumb">
                             <li class="active">
-                                <i class="fa fa-dashboard"></i> Informações gerais sobre o sistema
+                                <i class="fa fa-dashboard"></i> <?= $lang['DASH_PAGE_SUBTITLE'] ?>
                             </li>
                             <a href="dashboard.php"><i class='fa fa-refresh fa-pull-right'></i></a>
                         </ol>
@@ -34,7 +34,7 @@
                                 <div class='col-lg-12'>
                                     <div class='alert alert-danger alert-dismissable'>
                                         <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
-                                        <i class='fa fa-exclamation'></i>  <strong>Problema de conexão:</strong> Não foi possível estabelecer a conexão com o servidor.
+                                        <i class='fa fa-exclamation'></i>  <strong>{$lang['ALERT_CONNECT_ERROR']}</strong> {$lang['ALERT_CONNECT_MSG']}
                                     </div>
                                 </div>
                             </div>
@@ -58,13 +58,13 @@
                                     </div>
                                     <div class='col-xs-9 text-right'>
                                         <div class='huge'><?= $rooms_count ?></div>
-                                        <div>Salas de Aula</div>
+                                        <div><?= $lang['DASH_PAGE_ROOMS'] ?></div>
                                     </div>
                                 </div>
                             </div>
                             <a href='list_rooms.php'>
                                 <div class='panel-footer'>
-                                    <span class='pull-left'>Detalhes</span>
+                                    <span class='pull-left'><?= $lang['DASH_PAGE_DETAIL'] ?></span>
                                     <span class='pull-right'><i class='fa fa-arrow-circle-right'></i></span>
                                     <div class='clearfix'></div>
                                 </div>
@@ -80,13 +80,13 @@
                                     </div>
                                     <div class='col-xs-9 text-right'>
                                         <div class='huge'><?= $participant_count ?></div>
-                                        <div>Participantes</div>
+                                        <div><?= $lang['DASH_PAGE_ATTENDEES'] ?></div>
                                     </div>
                                 </div>
                             </div>
                             <a href='list_rooms.php'>
                                 <div class='panel-footer'>
-                                    <span class='pull-left'>Detalhes</span>
+                                    <span class='pull-left'><?= $lang['DASH_PAGE_DETAIL'] ?></span>
                                     <span class='pull-right'><i class='fa fa-arrow-circle-right'></i></span>
                                     <div class='clearfix'></div>
                                 </div>
@@ -102,13 +102,13 @@
                                     </div>
                                     <div class='col-xs-9 text-right'>
                                         <div class='huge'>1</div>
-                                        <div>Servidores</div>
+                                        <div><?= $lang['DASH_PAGE_SERVER'] ?></div>
                                     </div>
                                 </div>
                             </div>
                             <a href='server.php'>
                                 <div class='panel-footer'>
-                                    <span class='pull-left'>Detalhes</span>
+                                    <span class='pull-left'><?= $lang['DASH_PAGE_DETAIL'] ?></span>
                                     <span class='pull-right'><i class='fa fa-arrow-circle-right'></i></span>
                                     <div class='clearfix'></div>
                                 </div>
@@ -127,13 +127,13 @@
                                         </div>
                                         <div class='col-xs-9 text-right'>
                                             <div class='huge'>{$users}</div>
-                                            <div>Usuários Logados</div>
+                                            <div>{$lang['DASH_PAGE_LOGGEDUSR']}</div>
                                         </div>
                                     </div>
                                 </div>
                                 <a href='users.php'>
                                     <div class='panel-footer'>
-                                        <span class='pull-left'>Detalhes</span>
+                                        <span class='pull-left'>{$lang['DASH_PAGE_DETAIL']}</span>
                                         <span class='pull-right'><i class='fa fa-arrow-circle-right'></i></span>
                                         <div class='clearfix'></div>
                                     </div>
@@ -146,13 +146,13 @@
                 <div class="row">
                     <div class="col-lg-12">
                      <div class="col-sm-6">
-                       <h4>Tutorial do Apresentador</h4>
+                       <h4><?= $lang['DASH_PAGE_PRESENTER_VD'] ?></h4>
                        <div class="embed-responsive embed-responsive-16by9">
                          <iframe class="embed-responsive-item" src="//www.youtube.com/embed/J9mbw00P9W0"></iframe>
                        </div>
                      </div>
                      <div class="col-sm-6">
-                       <h4>Configuração de Áudio</h4>
+                       <h4><?= $lang['DASH_PAGE_AUDIO_VD'] ?></h4>
                        <div class="embed-responsive embed-responsive-16by9">
                          <iframe class="embed-responsive-item" src="//www.youtube.com/embed/4Y__UsUrRx0"></iframe>
                        </div>

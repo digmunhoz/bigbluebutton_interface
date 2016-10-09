@@ -44,10 +44,10 @@ $profile  = $_SESSION['profile'];
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-globe"></i> <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                         <li>                            
-                            <a href="dashboard.php?lang=pt_br"><img src="images/Brazil.png" height="16" width="22">Portugues</a>
+                            <a href="<?= $_SERVER['SCRIPT_NAME'] ?>?lang=pt_br"><img src="images/Brazil.png" height="16" width="22">Portugues</a>
                         </li>
                         <li>
-                            <a href="dashboard.php?lang=en"><span class="lang-sm lang-lbl" lang="en"></span></a>
+                            <a href="<?= $_SERVER['SCRIPT_NAME'] ?>?lang=en"><span class="lang-sm lang-lbl" lang="en"></span></a>
                         </li>
                     </ul>
                 </li>                                       

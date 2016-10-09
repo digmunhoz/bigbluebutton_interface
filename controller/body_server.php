@@ -13,11 +13,11 @@ require_once 'get_ec2_status.php';
                 <div class="row">
                     <div class="col-lg-12">
                         <h1 class="page-header">
-                            Servidor
+                            <?= $lang['SERVER_PAGE_TITLE'] ?>
                         </h1>
                         <ol class="breadcrumb">
                             <li class="active">
-                                <i class="fa fa-server"></i> Servidores utilizados para criar as salas de aula
+                                <i class="fa fa-server"></i> <?= $lang['SERVER_PAGE_SUBTITLE'] ?>
                             </li>
                             <a href="server.php"><i class='fa fa-refresh fa-pull-right'></i></a>
                         </ol>                      
@@ -42,10 +42,10 @@ require_once 'get_ec2_status.php';
                           <br>
                           <thead>
                             <tr>
-                              <th><i class='fa fa-cloud'></i> Nome do Servidor</th>
-                              <th><i class='fa fa-power-off'></i> Status</th>
-                              <th><i class='fa fa-info-circle'></i> ID do Servidor</th>
-                              <th><i class='fa fa-server'></i> Tipo do Servidor</th>
+                              <th><i class='fa fa-cloud'></i> {$lang['SERVER_PAGE_SRVNAME']}</th>
+                              <th><i class='fa fa-power-off'></i> {$lang['SERVER_PAGE_SRVSTATUS']}</th>
+                              <th><i class='fa fa-info-circle'></i> {$lang['SERVER_PAGE_SRVID']}</th>
+                              <th><i class='fa fa-server'></i> {$lang['SERVER_PAGE_SRVTYPE']}</th>
                               <th></th>
                             </tr>
                           </thead>
@@ -55,10 +55,10 @@ require_once 'get_ec2_status.php';
                               ";
                               if (($instance['State']['Name']) == 'stopped' ) {
                               echo "
-                              <td><span class='glyphicon glyphicon-asterisk' style='color:red' aria-hidden='true'></span> Desligado</td> ";
+                              <td><span class='glyphicon glyphicon-asterisk' style='color:red' aria-hidden='true'></span> {$lang['SERVER_PAGE_STATEDOWN']}</td> ";
                               } elseif (($instance['State']['Name']) == 'running') {
                               echo "
-                              <td><span class='glyphicon glyphicon-ok' style='color:green' aria-hidden='true'></span> Ligado</td>";
+                              <td><span class='glyphicon glyphicon-ok' style='color:green' aria-hidden='true'></span> {$lang['SERVER_PAGE_STATEUP']}</td>";
                               } else {
                               echo "
                               <td><span class='glyphicon glyphicon-hourglass' aria-hidden='true'></span> {$instance['State']['Name']}</td>";  
@@ -70,12 +70,12 @@ require_once 'get_ec2_status.php';
                               ";
                               if (($instance['State']['Name']) == 'stopped' ) {
                               echo "
-                              <button type='button' class='btn btn-success btn-sm' onClick=\"if(confirm('Deseja realmente ligar o servidor?')) window.location='controller/start_ec2_instance.php';\">Ligar</button>
+                              <button type='button' class='btn btn-success btn-sm' onClick=\"if(confirm('Deseja realmente ligar o servidor?')) window.location='controller/start_ec2_instance.php';\">{$lang['SERVER_PAGE_TURNON']}</button>
                               ";
                               }
                               if (($instance['State']['Name']) == 'running' ) {
                               echo "
-                              <button type='button' class='btn btn-danger btn-sm' onClick=\"if(confirm('Deseja realmente desligar o servidor?')) window.location='controller/stop_ec2_instance.php';\">Desligar</button>
+                              <button type='button' class='btn btn-danger btn-sm' onClick=\"if(confirm('Deseja realmente desligar o servidor?')) window.location='controller/stop_ec2_instance.php';\">{$lang['SERVER_PAGE_TURNON']}</button>
                               ";
                               }
                           echo "

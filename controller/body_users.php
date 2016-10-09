@@ -9,16 +9,15 @@ require_once 'admin_control.php';
         <div id="page-wrapper">
 
             <div class="container-fluid">
-
                 <!-- Page Heading -->
                 <div class="row">
                     <div class="col-lg-12">
                         <h1 class="page-header">
-                            Usuários
+                            <?= $lang['USERS_PAGE_TITLE'] ?>
                         </h1>
                         <ol class="breadcrumb">
                             <li class="active">
-                                <i class="fa fa-users"></i> Usuários cadastrados no sistema
+                                <i class="fa fa-users"></i> <?= $lang['USERS_PAGE_SUBTITLE'] ?>
                             </li>
                         </ol>
                               <span class='glyphicon glyphicon-plus pull-right btn btn-sm' data-toggle="modal" data-target="#myModal" aria-hidden='true' ></span>
@@ -26,10 +25,10 @@ require_once 'admin_control.php';
                             <br>
                             <thead>
                               <tr>
-                                <th><i class="fa fa-user"></i> Nome</th>
-                                <th><i class="fa fa-envelope"></i> E-mail</th>
-                                <th><i class="fa fa-calendar"></i></span> Data Criacao</th>
-                                <th><i class="fa fa-user"></i> Perfil</th>
+                                <th><i class="fa fa-user"></i> <?= $lang['USERS_PAGE_USER_NAME'] ?></th>
+                                <th><i class="fa fa-envelope"></i> <?= $lang['USERS_PAGE_USER_EMAIL'] ?></th>
+                                <th><i class="fa fa-calendar"></i></span> <?= $lang['USERS_PAGE_USER_DATE'] ?></th>
+                                <th><i class="fa fa-user"></i> <?= $lang['USERS_PAGE_USER_PROF'] ?></th>
                                 <th></th>
                               </tr>
                             </thead>
@@ -55,8 +54,8 @@ require_once 'admin_control.php';
                             <td>{$creation_date}</td>
                             <td>{$profile}</td>
                             <td>
-                            <a href='#'><button type='button' class='btn btn-success btn-sm'>Editar</button></a>
-                            <button onClick=\"if(confirm('Deseja realmente apagar o usuario \'$name\'?'))window.location='controller/delete_user.php?login={$email}';\" type='button' class='btn btn-danger btn-sm' class='btn btn-info btn-lg' >Apagar</button>      
+                            <a href='#'><button type='button' class='btn btn-success btn-sm'>{$lang['USERS_PAGE_EDIT']}</button></a>
+                            <button onClick=\"if(confirm('Deseja realmente apagar o usuario \'$name\'?'))window.location='controller/delete_user.php?login={$email}';\" type='button' class='btn btn-danger btn-sm' class='btn btn-info btn-lg' >{$lang['USERS_PAGE_DELETE']}</button>      
                             </td>
                             </tr>
                             "; } ?>
