@@ -21,24 +21,35 @@ $profile  = $_SESSION['profile'];
             <!-- Top Menu Items -->
             <ul class="nav navbar-right top-nav">
                <?php if ($profile == 1 ) {
-               echo '
-               <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" ><i class="fa fa-cogs"></i> Configurações <span class="caret"></span></a>
-                <ul class="dropdown-menu">
-                  <li><a href="users.php"><i class="fa fa-users"></i> Usuários</a></li>
+               echo "
+               <li class='dropdown'>
+                <a href='#' class='dropdown-toggle' data-toggle='dropdown' role='button' ><i class='fa fa-cogs'></i> {$lang['HEADER_SETTINGS']} <span class='caret'></span></a>
+                <ul class='dropdown-menu'>
+                  <li><a href='users.php'><i class='fa fa-users'></i> {$lang['HEADER_SETTINGS_USERS']}</a></li>
                 </ul>
-               </li> ';} ?>
+               </li> ";} ?>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> <?= $fullname ?> <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                         <li>
-                            <a href="profile.php"><i class="fa fa-fw fa-user"></i> Perfil</a>
+                            <a href="profile.php"><i class="fa fa-fw fa-user"></i> <?= $lang['HEADER_USER_PROFILE'] ?></a>
                         </li>
                         <li class="divider"></li>
                         <li>
-                            <a href="logout.php"><i class="fa fa-fw fa-power-off"></i> Sair</a>
+                            <a href="logout.php"><i class="fa fa-fw fa-power-off"></i> <?= $lang['HEADER_USER_LOGOUT'] ?></a>
                         </li>
                     </ul>
-                </li>
+                </li>                       
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-globe"></i> <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li>                            
+                            <a href="dashboard.php?lang=pt_br"><img src="images/Brazil.png" height="16" width="22">Portugues</a>
+                        </li>
+                        <li>
+                            <a href="dashboard.php?lang=en"><span class="lang-sm lang-lbl" lang="en"></span></a>
+                        </li>
+                    </ul>
+                </li>                                       
             </ul>
             <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->

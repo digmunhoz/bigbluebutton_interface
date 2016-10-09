@@ -146,17 +146,17 @@
                 <div class="row">
                     <div class="col-lg-12">
                      <div class="col-sm-6">
-                       <h4>Configuração de Áudio</h4>
-                       <div class="embed-responsive embed-responsive-16by9">
-                         <iframe class="embed-responsive-item" src="//www.youtube.com/embed/4Y__UsUrRx0"></iframe>
-                       </div>
-                     </div>
-                     <div class="col-sm-6">
                        <h4>Tutorial do Apresentador</h4>
                        <div class="embed-responsive embed-responsive-16by9">
                          <iframe class="embed-responsive-item" src="//www.youtube.com/embed/J9mbw00P9W0"></iframe>
                        </div>
-                     </div>                     
+                     </div>
+                     <div class="col-sm-6">
+                       <h4>Configuração de Áudio</h4>
+                       <div class="embed-responsive embed-responsive-16by9">
+                         <iframe class="embed-responsive-item" src="//www.youtube.com/embed/4Y__UsUrRx0"></iframe>
+                       </div>
+                     </div>                                          
                     </div>
                 </div>
                 <!-- /.row -->
