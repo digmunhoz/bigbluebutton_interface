@@ -1,8 +1,10 @@
 <?php
 
+//require_once 'validate_session.php';
+
 if( isset($_POST['name']) && isset($_POST['welcome']) ) {
 
-	require "../config/config.php";
+	require_once "../config/config.php";
 
         $name = urlencode($_POST['name']);
         $welcome = urlencode($_POST['welcome']);

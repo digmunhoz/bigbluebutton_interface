@@ -1,7 +1,7 @@
 <?php
 
 	require '../config/config.php';
-	require 'session_validate.php';
+	require 'validate_session.php';
 
 	if( isset($_GET['login'])) {
 
@@ -15,7 +15,8 @@
                 echo '<script>window.history.back();</script>';
         }
         else {
-                echo "<script>alert('Erro na remoção do usuário');</script>";
+                $erro = $db->lastErrorMsg();
+                echo "<script>alert('Error: $erro');</script>";
                 echo '<script>window.history.back();</script>';
 		}
 

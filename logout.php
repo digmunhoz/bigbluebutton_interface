@@ -1,9 +1,7 @@
 <?php
 
 session_start();
-
-if(session_destroy()) {
-	header("Location: index.php"); // Redirecting To Home Page
-}
+session_destroy();
+header("Location: index.php"); 
 
 ?>
