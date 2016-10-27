@@ -42,7 +42,7 @@ require 'controller/session_validate.php';
     	   <ul class='nav nav-sidebar'></ul> 
         </div>
         <div class='col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main'>
-          <h2 class='sub-header'>Página Inicial</h2>
+          <h2 class='sub-header'>Home</h2>
           <div class='table-responsive'></div>
             <div class="panel panel-default">
               <div class="panel-body">

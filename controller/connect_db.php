@@ -1,6 +1,6 @@
 <?php
 
-	require_once '../config/config.php';
+	require '../config/config.php';
 
 	$db = new SQLite3('../'.DB);
 
